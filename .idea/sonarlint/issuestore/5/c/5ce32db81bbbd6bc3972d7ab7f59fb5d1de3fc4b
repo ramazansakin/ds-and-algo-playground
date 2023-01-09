@@ -1,0 +1,8 @@
+
+e	java:S1178"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á§£r
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Ì”Ôí
+N	java:S106"9Replace this use of System.out or System.err by a logger.(ËáÊâ
+G
+java:S11971",Move the array designators [][] to the type.(ÌÌ´ûÿÿÿÿ
+P
+java:S22099"5Change this instance-reference to a static reference.(É“ÁÊøÿÿÿÿ

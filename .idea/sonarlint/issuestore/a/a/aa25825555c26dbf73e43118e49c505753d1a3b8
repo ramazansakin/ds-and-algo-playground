@@ -1,0 +1,19 @@
+
+r	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ÍÑœşÿÿÿÿ8…èÇÛ×0
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¶†Ú8…èÇÛ×0
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¼ê8…èÇÛ×0
+m	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¼ê8†èÇÛ×0
+m	java:S117 "QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¶†Ú8†èÇÛ×0
+r	java:S117&"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á£ÎÈşÿÿÿÿ8†èÇÛ×0
+m	java:S117'"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ã¶†Ú8‡èÇÛ×0
+s	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—ƒõÕùÿÿÿÿ8‡èÇÛ×0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ÁûÃå8¢èÇÛ×0
+8
+java:S36265"Remove this redundant jump.(ûÁİ…8£èÇÛ×0
+U	java:S106x"9Replace this use of System.out or System.err by a logger.(·„©8§èÇÛ×0
+[	java:S106‡"9Replace this use of System.out or System.err by a logger.(É¿ï¨øÿÿÿÿ8©èÇÛ×0
+[	java:S106Š"9Replace this use of System.out or System.err by a logger.(«úÖûÿÿÿÿ8©èÇÛ×0
+[	java:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ªèÇÛ×0
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(—Î±øüÿÿÿÿ8µèÇÛ×0
+[	java:S106“"9Replace this use of System.out or System.err by a logger.(£‘ÔÉıÿÿÿÿ8¶èÇÛ×0
+V	java:S106–"9Replace this use of System.out or System.err by a logger.(ŒÁÌ8¶èÇÛ×0

@@ -1,0 +1,8 @@
+
+m
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 24 to the 15 allowed.(Ç½Ã¢ýÿÿÿÿ
+^
+java:S1854"CRemove this useless assignment to local variable "innerCrossChars".(ŠíÂ°øÿÿÿÿ
+O
+java:S1481"4Remove this unused "innerCrossChars" local variable.(ŠíÂ°øÿÿÿÿ
+S	java:S106W"9Replace this use of System.out or System.err by a logger.(ý˜£¥ûÿÿÿÿ
