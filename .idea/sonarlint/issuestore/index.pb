@@ -35,3 +35,5 @@ a
 1src/com/rsakin/practise/leetcode/CountAndSay.java,4\3\4372a0db1d6d0334e4edacf3f6bc7e030ba2fc5e
 ^
 .src/com/rsakin/practise/codility/Solution.java,2\5\25de94f51f5b7885505e2be61b8f72adae399e85
+r
+Bsrc/com/rsakin/practise/leetcode/FirstOccurrenceOfStringIndex.java,b\d\bdc9edc56cf899a66388914e8c4ae721508541ed
