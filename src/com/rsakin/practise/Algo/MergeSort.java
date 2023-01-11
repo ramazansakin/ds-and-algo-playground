@@ -4,19 +4,19 @@ package com.rsakin.practise.Algo;
 class MergeSort {
 
     // Merge two sub-arrays L and M into arr
-    private void merge(int[] arr, int p, int q, int r) {
-        // Create L ← A[p..q] and M ← A[q+1..r]
-        int n1 = q - p + 1;
-        int n2 = r - q;
+    private void merge(int[] arr, int l, int m, int r) {
+        // Create L ← A[l..m] and M ← A[m+1..r]
+        int n1 = m - l + 1;
+        int n2 = r - m;
 
         int[] leftArr = new int[n1];
         int[] rightArr = new int[n2];
-        System.arraycopy(arr, p, leftArr, 0, n1);
+        System.arraycopy(arr, l, leftArr, 0, n1);
         for (int j = 0; j < n2; j++)
-            rightArr[j] = arr[q + 1 + j];
+            rightArr[j] = arr[m + 1 + j];
 
         // Maintain current index of sub-arrays and main array
-        int i = 0, j = 0, k = p;
+        int i = 0, j = 0, k = l;
 
         // Until we reach either end of either L or M, pick larger among
         // elements L and M and place them in the correct position at A[p..r]
