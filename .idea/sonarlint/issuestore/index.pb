@@ -11,8 +11,6 @@ f
 6src/com/rsakin/practise/datastructures/LinkedList.java,a\a\aa25825555c26dbf73e43118e49c505753d1a3b8
 s
 Csrc/com/rsakin/practise/leetcode/LetterCombinationsPhoneNumber.java,a\f\af354864e01e9b90491c08a4282df4432c3605d9
-e
-5src/com/rsakin/practise/leetcode/RemoveNthFromLL.java,4\b\4b05355b35bd30ab7b0c8b5b7f4d19ef04a16798
 h
 8src/com/rsakin/practise/leetcode/MergeTwoSortedList.java,b\e\be9a1b003d26c6a66b2cab09a13164fa916daaeb
 Z
