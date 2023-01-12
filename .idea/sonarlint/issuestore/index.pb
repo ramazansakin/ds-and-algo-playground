@@ -21,12 +21,8 @@ c
 3src/com/rsakin/practise/datastructures/AVLTree.java,0\f\0f0fab29761fb91093f53c360d81a5400b720e17
 l
 <src/com/rsakin/practise/datastructures/BinarySearchTree.java,1\6\16754e4287ea44eafe53ad7c082f47c64fec61d7
-c
-3src/com/rsakin/practise/leetcode/IsValidSudoku.java,4\7\4706e41a9aa9f7c3366cb4d5912ed659468f513e
 i
 9src/com/rsakin/practise/leetcode/GenerateParentheses.java,e\8\e8dbb98bf7ca08580fdd531036671cfaa451f343
-b
-2src/com/rsakin/practise/leetcode/SudokuSolver.java,b\1\b194dad7243824442fbe4ed4f7568aeb141e912f
 c
 3src/com/rsakin/practise/leetcode/SwapNodePairs.java,5\e\5eceaa622346afed76e2f1fc0acdaeba0e2d76ee
 a
