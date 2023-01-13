@@ -55,7 +55,7 @@ class MergeSort {
     private void mergeSort(int[] arr, int l, int r) {
         if (l < r) {
             // m is the point where the array is divided into two sub-arrays
-            int m = l + (r - l) / 2; // to avoid int overflow on (r + l / 2, also it can be r/2 + l/2
+            int m = l + (r - l) / 2; // to avoid int overflow on (r + l) / 2, also it can be r/2 + l/2
             mergeSort(arr, l, m);
             mergeSort(arr, m + 1, r);
             // Merge the sorted sub-arrays
