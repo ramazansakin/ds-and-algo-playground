@@ -15,7 +15,7 @@ public class CountingSort {
         for (int i = 0; i < size; i++) count[array[i]]++;
 
         // Copy the sorted elements into original array
-        for (int i = 0; i < max; i++) {
+        for (int i = 0; i < max + 1; i++) {
             if (count[i] != 0)
                 for (int j = 0; j < count[i]; j++) array[k++] = i;
         }
@@ -24,7 +24,7 @@ public class CountingSort {
     // Driver code
     public static void main(String[] args) {
 
-        int[] data = {4, 2, 2, 8, 3, 3, 1, 1243123};
+        int[] data = {4, 2, 2, 8, 3, 3, 1, 12412, 5};
         int size = data.length;
         CountingSort cs = new CountingSort();
         cs.countSort(data, size);
