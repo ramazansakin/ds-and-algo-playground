@@ -9,9 +9,9 @@ public class CountingSort {
     void countSort(int[] array, int size) {
         // Find the largest element of the array
         int max = Arrays.stream(array).max().getAsInt(), k = 0;
-        int[] count = new int[max + 1];
 
         // Store the count of each element
+        int[] count = new int[max + 1];
         for (int i = 0; i < size; i++) count[array[i]]++;
 
         // Copy the sorted elements into original array
@@ -66,9 +66,7 @@ public class CountingSort {
         }
 
         // Copy the sorted elements into original array
-        for (int i = 0; i < size; i++) {
-            array[i] = output[i];
-        }
+        if (size >= 0) System.arraycopy(output, 0, array, 0, size);
     }
 
 }
