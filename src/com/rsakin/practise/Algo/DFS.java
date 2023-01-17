@@ -1,24 +1,24 @@
 package com.rsakin.practise.Algo;
 
-// DFS algorithm in Java
 import java.util.LinkedList;
 
+// DFS algorithm in Java
 class Graph {
-    private LinkedList<Integer> adjLists[];
-    private boolean visited[];
+    private LinkedList<Integer>[] adjList;
+    private boolean[] visited;
 
     // Graph creation
     Graph(int vertices) {
-        adjLists = new LinkedList[vertices];
+        adjList = new LinkedList[vertices];
         visited = new boolean[vertices];
 
         for (int i = 0; i < vertices; i++)
-            adjLists[i] = new LinkedList<>();
+            adjList[i] = new LinkedList<>();
     }
 
     // Add edges
     void addEdge(int src, int dest) {
-        adjLists[src].add(dest);
+        adjList[src].add(dest);
     }
 
     // DFS algorithm
@@ -26,7 +26,7 @@ class Graph {
         visited[vertex] = true;
         System.out.print(vertex + " ");
 
-        for (int adj : adjLists[vertex]) {
+        for (int adj : adjList[vertex]) {
             if (!visited[adj])
                 DFS(adj);
         }

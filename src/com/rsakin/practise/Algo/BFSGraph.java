@@ -1,30 +1,29 @@
 package com.rsakin.practise.Algo;
 
-// BFS algorithm in Java
-
 import java.util.LinkedList;
 import java.util.Queue;
 
+// BFS algorithm in Java
 public class BFSGraph {
     private int V;
-    private LinkedList<Integer> adj[];
+    private LinkedList<Integer>[] adjList;
 
     // Create a graph
     BFSGraph(int v) {
         V = v;
-        adj = new LinkedList[v];
+        adjList = new LinkedList[v];
         for (int i = 0; i < v; ++i)
-            adj[i] = new LinkedList();
+            adjList[i] = new LinkedList();
     }
 
     // Add edges to the graph
     void addEdge(int v, int w) {
-        adj[v].add(w);
+        adjList[v].add(w);
     }
 
     // BFS algorithm
     void bfs(int vertex) {
-        boolean visited[] = new boolean[V];
+        boolean[] visited = new boolean[V];
         Queue<Integer> queue = new LinkedList();
 
         visited[vertex] = true;
@@ -34,7 +33,7 @@ public class BFSGraph {
             vertex = queue.poll();
             System.out.print(vertex + " ");
 
-            for (int n : adj[vertex]) {
+            for (int n : adjList[vertex]) {
                 if (!visited[n]) {
                     visited[n] = true;
                     queue.add(n);
