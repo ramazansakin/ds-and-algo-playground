@@ -1,9 +1,13 @@
 package com.rsakin.practise.codility;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 class VisitCounter {
 
@@ -28,6 +32,32 @@ class VisitCounter {
         return userVisits;
     }
 
+//    public Single<List<PostEntity>> getAllPosts() {
+//        return postsRepository.getAll()
+//                .flatMapIterable(postDtos -> postDtos)
+//                .flatMap(postDto -> userRepository.getById(postDto.getAuthorId())
+//                        .map(userDto -> new PostEntity(userDto.getName(), postDto.getContent()))
+//                        .onErrorReturn(throwable -> new PostEntity(null, postDto.getContent())))
+//                .toList();
+//    }
+
+    public static String findLongestWord(String sen) {
+        // Use regex to remove all non-letter characters
+        Pattern p = Pattern.compile("[^a-zA-Z ]");
+        Matcher m = p.matcher(sen);
+        sen = m.replaceAll("");
+
+        // Split the sentence into words
+        String[] words = sen.split(" ");
+
+        // Sort the words by length
+        Arrays.sort(words, Comparator.comparingInt(String::length));
+
+        // Return the last (longest) word
+        return words[words.length - 1];
+    }
+
+
     private static class UserStats {
         Optional<Long> visitCount;
 
@@ -51,7 +81,7 @@ class VisitCounter {
         map2.put("12347", new UserStats(5L));
         map2.put("12348", null);
 
-        System.out.println("Solution : " + new VisitCounter().count(map1, map2) );
+        System.out.println("Solution : " + new VisitCounter().count(map1, map2));
 
     }
 
