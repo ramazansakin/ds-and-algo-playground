@@ -1,4 +1,4 @@
-package com.rsakin.practise.test1;
+package com.rsakin.practise.coding.linkedlist;
 
 public class LinkedListIsCircular {
 

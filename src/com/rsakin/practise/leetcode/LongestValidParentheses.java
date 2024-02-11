@@ -1,6 +1,6 @@
 package com.rsakin.practise.leetcode;
 
-import java.util.Stack;
+import java.util.*;
 
 public class LongestValidParentheses {
 

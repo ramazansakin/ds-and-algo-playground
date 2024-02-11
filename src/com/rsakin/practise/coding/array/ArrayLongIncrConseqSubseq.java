@@ -1,4 +1,4 @@
-package com.rsakin.practise.test1;
+package com.rsakin.practise.coding.array;
 
 import java.util.Collections;
 import java.util.HashMap;

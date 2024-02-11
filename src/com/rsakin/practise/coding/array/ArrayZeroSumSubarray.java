@@ -1,11 +1,11 @@
-package com.rsakin.practise.test1;
+package com.rsakin.practise.coding.array;
 
 // Java program to find
 // if there is a zero sum subarray
 
 import java.awt.*;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 
 public class ArrayZeroSumSubarray {
 
@@ -94,16 +94,13 @@ public class ArrayZeroSumSubarray {
 }
 
 
-
 class MaxLenZeroSumSub {
 
     // Returns length of the maximum length
     // subarray with 0 sum
-    static int maxLen(int arr[])
-    {
+    static int maxLen(int arr[]) {
         // Creates an empty hashMap hM
-        HashMap<Integer, Integer> hM
-                = new HashMap<Integer, Integer>();
+        HashMap<Integer, Integer> hM = new HashMap<>();
 
         int sum = 0; // Initialize sum of elements
         int max_len = 0; // Initialize result
@@ -131,13 +128,12 @@ class MaxLenZeroSumSub {
     }
 
     // Drive's code
-    public static void main(String arg[])
-    {
-        int arr[] = { 15, -2, 2, -8, 1, 7, 10, 23 };
+    public static void main(String arg[]) {
+        int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
 
         // Function call
-        System.out.println(
-                "Length of the longest 0 sum subarray is "
-                        + maxLen(arr));
+        System.out.println("Length of the longest 0 sum subarray is " + maxLen(arr));
+
     }
+
 }
