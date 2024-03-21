@@ -2,31 +2,32 @@ package com.rsakin.practise.coding.string;
 
 public class StringLongestPalindromicSubString {
 
-    public static String longestPalindrome(String s) {
-        int start = 0, end = 0;
-        for (int i = s.length(); i > 0; --i) {
-            int odd = isPalindromic(s, i, i);
-            int even = isPalindromic(s, i, i + 1);
-            int len = Math.max(odd, even);
-            if (len > end - start) {
-                start = i - (len - 1) / 2;
-                end = i + len / 2;
-            }
+    int start = 0, maxLen = 0;
+    public String longestPalindrome(String s) {
+        for (int i = 0; i < s.length(); i++) {
+            isPalindromic(s, i, i);         // for odd-length possible palindrome
+            isPalindromic(s, i, i + 1);     // for even-length possible palindrome
         }
-        return s.substring(start, end + 1);
+        return s.substring(start, start + maxLen);
     }
 
-    public static int isPalindromic(String s, int left, int right) {
+    public void isPalindromic(String s, int left, int right) {
         while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
             left--;
             right++;
         }
-        return right - left - 1;
+
+        if (maxLen < right - left - 1) {
+            start = left + 1;
+            maxLen = right - left - 1;
+        }
+
     }
+
 
     public static void main(String[] args) {
 
-        System.out.println("Solution : " + StringLongestPalindromicSubString.longestPalindrome("babad"));
+        System.out.println("Solution : " + new StringLongestPalindromicSubString().longestPalindrome("babad"));
 
     }
 
