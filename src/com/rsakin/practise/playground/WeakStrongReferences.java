@@ -1,5 +1,6 @@
 package com.rsakin.practise.playground;
 
+import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 
 public class WeakStrongReferences {
@@ -28,23 +29,24 @@ public class WeakStrongReferences {
         // Create a strong reference to the object
         String myObject = new String("Hello, strong reference!");
 
-        String anotherRef = myObject;
+        SoftReference<String> softReference = new SoftReference<>(myObject);
         // Dereference the strong reference
         myObject = null;
 
         // Access the object through the strong reference (will still be accessible)
-        System.out.println("Object through strong reference: " + anotherRef);
+        System.out.println("Object through strong reference: " + softReference.get());
 
         // Trigger garbage collection (may not necessarily collect the object)
         System.gc();
 
         // Access the object through the strong reference after garbage collection
-        System.out.println("Object through strong reference after GC: " + anotherRef);
+        System.out.println("Object through strong reference after GC: " + softReference.get());
     }
 
     public static void main(String[] args) {
 
-//        weakReferenceUsage();
+        weakReferenceUsage();
+        System.out.println("-------------------------------------------");
         strongreferenceUsage();
 
     }
