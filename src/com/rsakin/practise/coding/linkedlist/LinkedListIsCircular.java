@@ -11,21 +11,22 @@ public class LinkedListIsCircular {
     /*This function returns true if given linked
     list is circular, else false. */
     static boolean isCircular(Node head) {
-        // An empty linked list is circular
-        if (head == null)
-            return true;
+        if (head == null || head.next == null) {
+            return false;
+        }
 
-        // Next of head
-        Node node = head.next;
+        Node slow = head;
+        Node fast = head.next;
 
-        // This loop would stop in both cases (1) If
-        // Circular (2) Not circular
-        while (node != null && node != head)
-            node = node.next;
+        while (fast != null && fast.next != null) {
+            if (slow == fast) {
+                return true;
+            }
+            slow = slow.next;
+            fast = fast.next.next;
+        }
 
-        // If loop stopped because of circular
-        // condition
-        return (node == head);
+        return false;
     }
 
     // Utility function to create a new node.
