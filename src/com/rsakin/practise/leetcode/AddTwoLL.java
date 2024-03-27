@@ -23,10 +23,12 @@ public class AddTwoLL {
 
     public static void main(String[] args) {
         // Sample input lists
+        // l1 represents 342
         ListNode l1 = new ListNode(2);
         l1.next = new ListNode(4);
         l1.next.next = new ListNode(3);
 
+        // l2 represents 465
         ListNode l2 = new ListNode(5);
         l2.next = new ListNode(6);
         l2.next.next = new ListNode(4);
