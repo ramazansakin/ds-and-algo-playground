@@ -10,6 +10,7 @@ public class Atoi {
         if (s.isEmpty()) return 0;
 
         int sign = 1, start = 0, len = s.length();
+        // use long to prevent int overflow+/underflow-
         long sum = 0;
 
         if (s.charAt(0) == '-') {
@@ -24,11 +25,11 @@ public class Atoi {
             if (!Character.isDigit(c)) break;
 
             sum = sum * 10 + (c - '0');
-
-            // Check for overflow/underflow before continuing
-            if (sign == 1 && sum > Integer.MAX_VALUE) return Integer.MAX_VALUE;
-            if (sign == -1 && (-1) * sum < Integer.MIN_VALUE) return Integer.MIN_VALUE;
         }
+
+        // Check for overflow+/underflow-
+        if (sign == 1 && sum > Integer.MAX_VALUE) return Integer.MAX_VALUE;
+        if (sign == -1 && (-1) * sum < Integer.MIN_VALUE) return Integer.MIN_VALUE;
 
         // Return 0 if no digits were found
         if (start == 0 && !Character.isDigit(s.charAt(0))) return 0;
@@ -42,8 +43,8 @@ public class Atoi {
 
         // Test cases
         String[] testCases = {
-                "42",           // Expected: 42
-                "   -42",       // Expected: -42
+                "42",               // Expected: 42
+                "   -42",           // Expected: -42
                 "4193 with words",  // Expected: 4193
                 "words and 987",    // Expected: 0
                 "-91283472332",     // Expected: -2147483648
