@@ -52,4 +52,40 @@ public class FourSum {
         return result;
     }
 
+    public static void main(String[] args) {
+        FourSum solution = new FourSum();
+
+        // Test Case 1
+        int[] nums1 = {1, 0, -1, 0, -2, 2};
+        int target1 = 0;
+        List<List<Integer>> result1 = solution.fourSum(nums1, target1);
+        System.out.println("Test Case 1:");
+        printResult(result1);
+
+        // Test Case 2
+        int[] nums2 = {1, 2, 3, 4, 5};
+        int target2 = 20;
+        List<List<Integer>> result2 = solution.fourSum(nums2, target2);
+        System.out.println("\nTest Case 2:");
+        printResult(result2);
+
+        // Test Case 3
+        int[] nums3 = {-3, -2, -1, 0, 0, 1, 2, 3};
+        int target3 = 3;
+        List<List<Integer>> result3 = solution.fourSum(nums3, target3);
+        System.out.println("\nTest Case 3:");
+        printResult(result3);
+    }
+
+    // Helper method to print the result
+    private static void printResult(List<List<Integer>> result) {
+        if (result.isEmpty()) {
+            System.out.println("No possible list");
+            return;
+        }
+        for (List<Integer> quadruplet : result) {
+            System.out.println(quadruplet);
+        }
+    }
+
 }
