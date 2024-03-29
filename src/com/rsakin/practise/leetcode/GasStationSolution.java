@@ -4,11 +4,11 @@ public class GasStationSolution {
 
 
     // gas stations & costs for each road
-    // 1.way - traversing all the stations by starting each station - brute force naive solution
+    // 1.way - traversing all the stations by starting each station - brute force approach which is a naive solution
     // 2 for loop, 1 for keeping the start station, 2nd for traversing all the other stations till gas tank is not empty
     // Time: O(n^2) , Space: O(1)
 
-    // 2.way -- better efficient
+    // 2.way -- better efficient on timing
     // gas = [1,2,3,4,5], cost = [3,4,5,1,2]
     // -2, -2, -2, "3", "3"  -> it needs to be positive for being a possible starting point!
     // -2 -> -4 -> -6 -> -3 -> 0
@@ -16,10 +16,8 @@ public class GasStationSolution {
 
     public int canCompleteCircuit(int[] gas, int[] cost) {
 
-        int totalGas = 0;
-        int totalCost = 0;
-        int tank = 0;
-        int startStation = 0;
+        int totalGas = 0, totalCost = 0;
+        int tank = 0, startStation = 0;
 
         for (int i = 0; i < gas.length; i++) {
             totalGas += gas[i];
@@ -34,9 +32,7 @@ public class GasStationSolution {
         }
 
         // If total gas is less than total cost, it's impossible to complete the circuit
-        if (totalGas < totalCost) {
-            return -1;
-        }
+        if (totalGas < totalCost) return -1;
 
         return startStation;
     }
