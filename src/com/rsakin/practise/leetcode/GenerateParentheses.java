@@ -7,8 +7,11 @@ public class GenerateParentheses {
 
     public static void main(String[] args) {
         GenerateParentheses gp = new GenerateParentheses();
-
         System.out.println("Possible Parentheses : " + gp.generateParenthesis(3));
+
+        System.out.println("---------------");
+
+        System.out.println("Possible Parentheses : " + gp.generateParenthesis(1));
 
     }
 
@@ -27,6 +30,28 @@ public class GenerateParentheses {
         }
         backtrack(list, str + "(", left - 1, right);
         backtrack(list, str + ")", left, right - 1);
+    }
+
+    // *****
+    // Alternative similar solution
+    public List<String> generateParenthesis2(int n) {
+        List<String> result = new ArrayList<>();
+        backtrack2(result, "", 0, 0, n);
+        return result;
+    }
+
+    private void backtrack2(List<String> result, String current, int open, int close, int max) {
+        if (current.length() == max * 2) {
+            result.add(current);
+            return;
+        }
+
+        if (open < max) {
+            backtrack2(result, current + "(", open + 1, close, max);
+        }
+        if (close < open) {
+            backtrack2(result, current + ")", open, close + 1, max);
+        }
     }
 
 }
