@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class FindMinPositiveNumber {
 
+
     public int firstMissingPositive(int[] nums) {
         int i = 0;
         while (i < nums.length) {
@@ -28,6 +29,27 @@ public class FindMinPositiveNumber {
         System.out.println("Positive min number for the array " + Arrays.toString(nums) + " : " +
                 new FindMinPositiveNumber().firstMissingPositive(nums));
 
+    }
+
+
+    // easiest way to solve this, the naive solution is sorting the list
+    // then check each index with corresponding number is there
+    // like below
+    public int firstMissingPositive2(int[] nums) {
+        Arrays.sort(nums);
+        int n = nums.length, missing = 1;
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] <= 0) continue;
+            // If the current element is the same as the missing positive integer, increment missing
+            if (nums[i] == missing) {
+                missing++;
+            } else if (nums[i] > missing) {
+                // If the current element is greater than the missing positive integer, return missing
+                return missing;
+            }
+        }
+        return missing;
     }
 
 }
