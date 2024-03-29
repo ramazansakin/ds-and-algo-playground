@@ -12,6 +12,10 @@ public class FirstOccurrenceOfStringIndex {
 
         System.out.println("Result of first Occ : " + strStr("mississippi", "pi"));
 
+        System.out.println("Result of first Occ : " + strStr("mississippi", "po"));
+
+        System.out.println("Result of first Occ : " + strStr("mississippi", "sip"));
+
     }
 
 }
