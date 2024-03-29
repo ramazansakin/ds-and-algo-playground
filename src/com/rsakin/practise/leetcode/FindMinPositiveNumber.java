@@ -51,4 +51,10 @@ public class FindMinPositiveNumber {
         return missing;
     }
 
+
+    // Another way of solving the problem is holding an another array with length of input array,
+    // it can be a boolean array and check each indexes with number in the list and
+    // set true the index of status[index] if there is a number like index + 1
+    // after marking all the numbers we can trace the status boolena array and decide the missing positive number
+
 }
