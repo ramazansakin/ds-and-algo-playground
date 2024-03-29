@@ -37,14 +37,13 @@ public class FindMinPositiveNumber {
     // like below
     public int firstMissingPositive2(int[] nums) {
         Arrays.sort(nums);
-        int n = nums.length, missing = 1;
+        int missing = 1;
 
-        for (int i = 0; i < n; i++) {
-            if (nums[i] <= 0) continue;
+        for (int num : nums) {
+            if (num <= 0) continue;
             // If the current element is the same as the missing positive integer, increment missing
-            if (nums[i] == missing) {
-                missing++;
-            } else if (nums[i] > missing) {
+            if (num == missing) missing++;
+            else if (num > missing) {
                 // If the current element is greater than the missing positive integer, return missing
                 return missing;
             }
