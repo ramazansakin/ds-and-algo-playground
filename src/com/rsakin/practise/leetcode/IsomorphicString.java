@@ -4,6 +4,9 @@ import java.util.HashMap;
 
 public class IsomorphicString {
 
+
+    // we can use a map to hold each a <-> b mappings
+    // Or we can use 2 map to hold each a -> and b -> a mappings
     public boolean isIsomorphic(String s, String t) {
         if (s == null || s.length() <= 1) return true;
 
