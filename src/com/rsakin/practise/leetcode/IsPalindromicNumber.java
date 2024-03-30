@@ -2,6 +2,11 @@ package com.rsakin.practise.leetcode;
 
 public class IsPalindromicNumber {
 
+    // how to implement
+    // 121 -> how to reverse it
+    // So while getting modula & division like 121 % 10 = 1 and 121 / 10 = 12
+    // then while dividing and getting modula, we can build the reversed number of it
+
     public boolean isPalindrome(int x) {
 
         if (x < 0) return false;
