@@ -34,7 +34,9 @@ public class IntToRoman {
         final String X[] = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         final String I[] = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 
-        return M[num / 1000] + C[(num % 1000) / 100] + X[(num % 100) / 10] + I[num % 10];
+        StringBuilder sb = new StringBuilder();
+        sb.append(M[num / 1000]).append(C[(num % 1000) / 100]).append(X[(num % 100) / 10]).append(I[num % 10]);
+        return sb.toString();
     }
 
 
