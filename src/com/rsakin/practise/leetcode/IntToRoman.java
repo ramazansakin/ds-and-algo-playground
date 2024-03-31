@@ -47,4 +47,62 @@ public class IntToRoman {
 
     }
 
+    // 3rd alternative solution
+    // looping the number against defined corresponding chars instead of using mapping list
+    public String intToRoman3(int num) {
+        StringBuilder sb = new StringBuilder();
+
+        // Thousands place
+        sb.append("M".repeat(num / 1000));
+        num %= 1000;
+
+        // Hundreds place
+        if (num >= 900) {
+            sb.append("CM");
+            num -= 900;
+        } else if (num >= 500) {
+            sb.append("D");
+            sb.append("C".repeat((num - 500) / 100));
+            num %= 100;
+        } else if (num >= 400) {
+            sb.append("CD");
+            num -= 400;
+        } else {
+            sb.append("C".repeat(num / 100));
+            num %= 100;
+        }
+
+        // Tens place
+        if (num >= 90) {
+            sb.append("XC");
+            num -= 90;
+        } else if (num >= 50) {
+            sb.append("L");
+            sb.append("X".repeat((num - 50) / 10));
+            num %= 10;
+        } else if (num >= 40) {
+            sb.append("XL");
+            num -= 40;
+        } else {
+            sb.append("X".repeat(num / 10));
+            num %= 10;
+        }
+
+        // Ones place
+        if (num >= 9) {
+            sb.append("IX");
+            num -= 9;
+        } else if (num >= 5) {
+            sb.append("V");
+            sb.append("I".repeat(num - 5));
+        } else if (num == 4) {
+            sb.append("IV");
+        } else {
+            sb.append("I".repeat(num));
+        }
+
+        return sb.toString();
+    }
+
+
 }
