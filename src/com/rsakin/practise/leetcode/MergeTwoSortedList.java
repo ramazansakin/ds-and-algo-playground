@@ -17,26 +17,26 @@ public class MergeTwoSortedList {
 
     // Iterative
     public ListNode mergeTwoLists2(ListNode l1, ListNode l2) {
-        ListNode head = new ListNode(0);
-        ListNode handler = head;
+        ListNode result = new ListNode(0);
+        ListNode iter = result;
         while (l1 != null && l2 != null) {
             if (l1.val <= l2.val) {
-                handler.next = l1;
+                iter.next = l1;
                 l1 = l1.next;
             } else {
-                handler.next = l2;
+                iter.next = l2;
                 l2 = l2.next;
             }
-            handler = handler.next;
+            iter = iter.next;
         }
 
         if (l1 != null) {
-            handler.next = l1;
+            iter.next = l1;
         } else if (l2 != null) {
-            handler.next = l2;
+            iter.next = l2;
         }
 
-        return head.next;
+        return result.next; // ignore the first Node with 0 value
     }
 
     public static void main(String[] args) {
@@ -48,11 +48,13 @@ public class MergeTwoSortedList {
         ListNode node4 = new ListNode(7);
         ListNode node5 = new ListNode(8);
 
+        // combine them
         node.next = node2;
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
 
+        // reference to the first ListNode as head
         ListNode list1 = node;
 
         // create a sample list2
@@ -70,8 +72,21 @@ public class MergeTwoSortedList {
         ListNode list2 = node21;
 
         System.out.println("Solution with Recursive : ");
-        RemoveNthFromLL.printLL(mergeTwoLists(list1, list2));
+        printLL(mergeTwoLists(list1, list2));
 
+        // you can check the input lists are being modified
+//        printLL(list1);
+//        printLL(list2);
+
+    }
+
+    public static void printLL(ListNode head) {
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + " ---> ");
+            temp = temp.next;
+        }
+        System.out.println("NULL");
     }
 
 }
