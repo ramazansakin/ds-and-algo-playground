@@ -23,6 +23,16 @@ public class ValidParanthesis {
         return stack.isEmpty();
     }
 
+    public static void main(String[] args) {
+
+        System.out.println("IsValid statement :  -> " + isValid2(""));
+
+        System.out.println("IsValid statement : ()()()))((()()( -> " + isValid("()()()))((()()("));
+
+        System.out.println("IsValid statement : (()()()((()))) -> " + isValid("(()()()((())))"));
+
+    }
+
     public static boolean isValid2(String s) {
         char[] list = new char[s.length()];
         int h = 0;
@@ -42,13 +52,6 @@ public class ValidParanthesis {
             }
         }
         return h == 0;
-    }
-
-
-    public static void main(String[] args) {
-
-        System.out.println("IsValid statement : " + isValid2(""));
-
     }
 
 }
