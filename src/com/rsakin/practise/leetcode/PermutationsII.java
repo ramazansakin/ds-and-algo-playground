@@ -22,8 +22,8 @@ public class PermutationsII {
                 used[i] = true;
                 tempList.add(nums[i]);
                 backtrack(list, tempList, nums, used);
-                used[i] = false;
                 tempList.remove(tempList.size() - 1);
+                used[i] = false;
             });
         }
     }
