@@ -35,7 +35,9 @@ public class Permutations {
 
     }
 
+
     // Another recursive approach
+    // this is little bit more complex than first backtracking solution
     public List<List<Integer>> permute2(int[] nums) {
         List<Integer> list = Arrays.stream(nums).boxed().collect(Collectors.toList());
         return permute(list);
