@@ -71,4 +71,11 @@ public class RemoveNthFromLL {
 
     }
 
+
+    // Alternative solution like, we can find the length of the LL by iterating to null
+    // then get size - n = firstNth position, if its lower than 0, return null
+    // If its greater or equal to 0, then traverse the LL by firstNth - 1 ( - 1 for placing previous node to delete next easily) and just assign it like,
+    // temp.next = temp.next.next to delete temp
+
+
 }
