@@ -1,5 +1,7 @@
 package com.rsakin.practise.leetcode;
 
+import java.util.Arrays;
+
 public class RemoveDuplicatesInSortedArray {
 
     public static int removeDuplicates(int[] nums) {
@@ -14,7 +16,7 @@ public class RemoveDuplicatesInSortedArray {
     public static int removeElement(int[] nums, int val) {
         int count = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (i < nums.length && nums[i] == val) continue;
+            if (nums[i] == val) continue;
             nums[count++] = nums[i];
         }
         return count;
@@ -26,7 +28,7 @@ public class RemoveDuplicatesInSortedArray {
 
         //System.out.println("After remove Dup : " + removeDuplicates(nums));
 
-        System.out.println("After remove Elms : " + removeElement(nums, 0));
+        System.out.println("After remove Elements : " + Arrays.toString(nums) + " - result : " + removeElement(nums, 0));
 
     }
 
