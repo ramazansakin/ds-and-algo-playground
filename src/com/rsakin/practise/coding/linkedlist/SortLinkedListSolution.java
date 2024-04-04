@@ -17,7 +17,7 @@ public class SortLinkedListSolution {
             fast = fast.next.next;
         }
 
-        prev.next = null;
+        prev.next = null;   // to cut head in middle, use 2 isolated part like head and slow, then merge them as sorted
         ListNode left = sortList(head);
         ListNode right = sortList(slow);
 
@@ -40,12 +40,8 @@ public class SortLinkedListSolution {
         }
 
         // Append the remaining nodes of l1 or l2
-        if (l1 != null) {
-            current.next = l1;
-        }
-        if (l2 != null) {
-            current.next = l2;
-        }
+        if (l1 != null) current.next = l1;
+        else current.next = l2;
 
         return dummy.next;
     }
