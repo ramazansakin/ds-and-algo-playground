@@ -28,6 +28,8 @@ public class RomanToInt {
 
     public static void main(String[] args) {
 
+        System.out.println("Roman to Int for XIV : " + new RomanToInt().romanToInt("XIV"));
+
         System.out.println("Roman to Int for MCMXCIV : " + new RomanToInt().romanToInt("MCMXCIV"));
 
     }
