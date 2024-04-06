@@ -5,19 +5,17 @@ import java.util.Arrays;
 public class SearchInsert {
 
     public int searchInsert(int[] nums, int target) {
-        int startInd = 0, endInd = nums.length - 1, lastInd = 0;
-        while (startInd <= endInd) {
-            int midInd = startInd + (endInd - startInd) / 2;
-            if (nums[midInd] == target) {
-                return midInd;
-            } else if (nums[midInd] < target) {
-                lastInd = startInd = midInd + 1;
-            } else {
-                endInd = midInd - 1;
-                lastInd = endInd + 1;
-            }
+        int start = 0;
+        int end = nums.length - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+            if (nums[mid] == target) return mid;
+            else if (nums[mid] > target) end = mid - 1;
+            else start = mid + 1;
         }
-        return lastInd;
+
+        return start;
     }
 
     public static void main(String[] args) {
