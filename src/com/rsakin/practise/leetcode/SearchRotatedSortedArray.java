@@ -26,21 +26,27 @@ public class SearchRotatedSortedArray {
         return -1;
     }
 
-    public int search2(int[] nums, int target) {
-        int lo = 0, hi = nums.length - 1;
-        while (lo <= hi) {
-            int mid = lo + (hi - lo) / 2;
-            int num;
-            if ((nums[mid] < nums[0]) == (target < nums[0]))
-                num = nums[mid];
-            else
-                num = target < nums[0] ? Integer.MIN_VALUE : Integer.MAX_VALUE;
+    public static void main(String[] args) {
+        SearchRotatedSortedArray main = new SearchRotatedSortedArray();
 
-            if (num < target) lo = mid + 1;
-            else if (num > target) hi = mid - 1;
-            else return mid;
-        }
-        return -1;
+        // Test cases
+        int[] nums1 = {4, 5, 6, 7, 0, 1, 2};
+        int target1 = 0;
+        System.out.println("Index of " + target1 + " in nums1: " + main.search(nums1, target1)); // Output: 4
+
+        int[] nums2 = {4, 5, 6, 7, 0, 1, 2};
+        int target2 = 3;
+        System.out.println("Index of " + target2 + " in nums2: " + main.search(nums2, target2)); // Output: -1
+
+        int[] nums3 = {1};
+        int target3 = 0;
+        System.out.println("Index of " + target3 + " in nums3: " + main.search(nums3, target3)); // Output: -1
+
+        int[] nums4 = {1, 3};
+        int target4 = 3;
+        System.out.println("Index of " + target4 + " in nums4: " + main.search(nums4, target4)); // Output: 1
     }
+
+
 }
 
