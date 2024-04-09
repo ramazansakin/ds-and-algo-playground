@@ -40,7 +40,7 @@ public class TrieDSSampleImpl {
                 }
                 current = current.children[index];
             }
-            return current != null && current.isEndOfWord;
+            return current.isEndOfWord;
         }
 
         public boolean startsWith(String prefix) {
