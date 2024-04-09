@@ -1,9 +1,11 @@
 package com.rsakin.practise.leetcode;
 
 public class ZigZagString {
+
     public String convert(String s, int numRows) {
         char[] c = s.toCharArray();
         int len = c.length;
+
         StringBuilder[] sb = new StringBuilder[numRows];
         for (int i = 0; i < sb.length; ++i)
             sb[i] = new StringBuilder();
@@ -20,4 +22,25 @@ public class ZigZagString {
 
         return sb[0].toString();
     }
+
+    public static void main(String[] args) {
+        ZigZagString solution = new ZigZagString();
+
+        // Test case 1
+        String s1 = "PAYPALISHIRING";
+        int numRows1 = 3;
+        String result1 = solution.convert(s1, numRows1);
+        System.out.println("Test Case 1:");
+        System.out.println("Input: s = \"" + s1 + "\", numRows = " + numRows1);
+        System.out.println("Output: \"" + result1 + "\"");
+
+        // Test case 2
+        String s2 = "PAYPALISHIRING";
+        int numRows2 = 4;
+        String result2 = solution.convert(s2, numRows2);
+        System.out.println("\nTest Case 2:");
+        System.out.println("Input: s = \"" + s2 + "\", numRows = " + numRows2);
+        System.out.println("Output: \"" + result2 + "\"");
+    }
+
 }
