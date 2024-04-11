@@ -27,7 +27,7 @@ public class Atoi {
             sum = sum * 10 + (c - '0');
         }
 
-        // Check for overflow+/underflow-
+        // Check for overflow+/underflow- edge-cases
         if (sign == 1 && sum > Integer.MAX_VALUE) return Integer.MAX_VALUE;
         if (sign == -1 && (-1) * sum < Integer.MIN_VALUE) return Integer.MIN_VALUE;
 
