@@ -24,7 +24,7 @@ public class BFSGraph {
     // BFS algorithm
     void bfs(int vertex) {
         boolean[] visited = new boolean[V];
-        Queue<Integer> queue = new LinkedList();
+        Queue<Integer> queue = new LinkedList<>();
 
         visited[vertex] = true;
         queue.add(vertex);
@@ -52,8 +52,12 @@ public class BFSGraph {
         g.addEdge(2, 3);
         g.addEdge(3, 3);
 
-        System.out.println("Following is Breadth First Traversal " + "(starting from vertex 2)");
+        System.out.println("--------------------------------");
 
-        g.bfs(2);
+        int startingVertex = 2;
+        System.out.println("Following is Breadth First Traversal " + "(starting from vertex " + startingVertex + ")");
+        g.bfs(startingVertex);
+
+        System.out.println("\n--------------------------------");
     }
 }
