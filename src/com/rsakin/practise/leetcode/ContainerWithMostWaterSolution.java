@@ -7,7 +7,7 @@ public class ContainerWithMostWaterSolution {
     // T: O(n^2)  --  S: O(1)
 
 
-    // 2.way is two pointer approach
+    // 2.way is 2-Pointer Approach
     // start and end indexes and comparing each index one by one between start and end
     // then calculate and check the area until start < end
     // T: O(n)  --  S: O(1)
