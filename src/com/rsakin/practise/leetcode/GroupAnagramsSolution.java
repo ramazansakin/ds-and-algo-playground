@@ -33,7 +33,7 @@ public class GroupAnagramsSolution {
         // Output: [[""]]
 
         // test case - 3
-        String[] strs3 = {"a"};
+        String[] strs3 = {"a", "b", "date", "tade", "car", "arc"};
         System.out.println(groupAnagrams(strs3));
         // Output: [["a"]]
     }
