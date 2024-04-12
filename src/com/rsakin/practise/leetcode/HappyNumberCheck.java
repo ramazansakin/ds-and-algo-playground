@@ -13,16 +13,17 @@ public class HappyNumberCheck {
     // 1^2 + 0^2 + 0^2 = 1, that is; 19 is happy number
 
     public static boolean isHappy(int n) {
-        Set<Integer> seen = new HashSet<>();
+        Set<Integer> seen = new HashSet<>();    // efficient retrieval check and provide uniqueness
 
         while (n != 1) {
             if (seen.contains(n)) {
-                return false; // Detected a cycle, the number is not happy
+                return false;   // Detected a cycle, the number is not happy
             }
             seen.add(n);
 
             int sum = 0;
             while (n > 0) {
+                // happy number calculation
                 int digit = n % 10;
                 sum += digit * digit;
                 n /= 10;
@@ -30,7 +31,7 @@ public class HappyNumberCheck {
             n = sum;
         }
 
-        return true; // The number is happy
+        return true;    // The number is happy
     }
 
 
