@@ -15,13 +15,13 @@ public class ContainsDuplicate2 {
 //    Output: true
 
     // 1.way - naive solution which is brute force
-    // using 2 for loop and checking all elements by each and then if same numbers occurred
+    // using 2 loops and checking all elements by each and then if same numbers occurred
     // then check the indexes, difference is equal or lower than k
     // T: O(n^2) , S: O(1)
 
 
     // 2.way - using map to hold number & index together
-    // T: O(1) , S: O(n) -> we hold both numbers and corresponding indexes as well -> "2*n" but effectively "n"
+    // T: O(n) , S: O(n) -> we hold both numbers and corresponding indexes as well -> "2*n" but effectively "n"
     public static boolean containsNearbyDuplicate(int[] nums, int k) {
 
         Map<Integer, Integer> numberByIndex = new HashMap<>();
