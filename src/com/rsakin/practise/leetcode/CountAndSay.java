@@ -26,7 +26,7 @@ public class CountAndSay {
         System.out.println("Solution for " + num + " : " + new CountAndSay().countAndSay(num));
 
 
-        num = 7;
+        num = 5;
         System.out.println("Solution for " + num + " : " + new CountAndSay().countAndSay(num));
 
     }
