@@ -78,6 +78,27 @@ public class CombinationSum {
     // Let's say we can have same number in the list or also for above solution,
     // it uses the same number multiple times, to prevent those
     // we can implement like below
+    public List<List<Integer>> combinationSum3(int[] candidates, int target) {
+        List<List<Integer>> result = new ArrayList<>();
+        Arrays.sort(candidates); // Sort candidates to handle duplicates
+        backtrack(result, new ArrayList<>(), candidates, target, 0);
+        return result;
+    }
 
+    private void backtrack(List<List<Integer>> result, List<Integer> tempList, int[] candidates, int remain, int start) {
+        if (remain < 0) return; // If remaining sum is negative, stop recursion
+        else if (remain == 0)
+            result.add(new ArrayList<>(tempList)); // If remaining sum is 0, add current combination to result
+        else {
+            for (int i = start; i < candidates.length; i++) {
+                // Skip duplicates to avoid reusing the same element
+                if (i > start && candidates[i] == candidates[i - 1]) continue;
+
+                tempList.add(candidates[i]); // Add candidate to current combination
+                backtrack(result, tempList, candidates, remain - candidates[i], i); // Continue to find combination recursively
+                tempList.remove(tempList.size() - 1); // Backtrack by removing last added candidate
+            }
+        }
+    }
 
 }
