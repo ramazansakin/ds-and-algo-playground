@@ -11,7 +11,7 @@ public class GenerateParentheses {
 
         System.out.println("---------------");
 
-        System.out.println("Possible Parentheses : " + gp.generateParenthesis(1));
+        System.out.println("Possible Parentheses with alternative solution : " + gp.generateParenthesis2(4));
 
     }
 
@@ -24,6 +24,7 @@ public class GenerateParentheses {
     private void backtrack(List<String> list, String str, int left, int right) {
 
         if (left < 0 || left > right) return;
+
         if (left == 0 && right == 0) {
             list.add(str);
             return;
@@ -31,6 +32,7 @@ public class GenerateParentheses {
         backtrack(list, str + "(", left - 1, right);
         backtrack(list, str + ")", left, right - 1);
     }
+
 
     // *****
     // Alternative similar solution
