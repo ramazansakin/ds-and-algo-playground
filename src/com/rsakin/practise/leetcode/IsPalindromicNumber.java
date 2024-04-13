@@ -22,6 +22,9 @@ public class IsPalindromicNumber {
     public static void main(String[] args) {
 
         int number = 1212;
+        // tricky way to solve :)
+        // StringBuilder sb = new StringBuilder(number);
+        // String reversedNumber = sb.reverse().toString();
         System.out.println(number + " is palindromic number : " + new IsPalindromicNumber().isPalindrome(number));
 
         int number2 = 122221;
