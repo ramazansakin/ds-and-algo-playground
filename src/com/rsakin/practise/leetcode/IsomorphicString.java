@@ -6,9 +6,9 @@ public class IsomorphicString {
 
 
     // we can use a map to hold each a <-> b mappings
-    // Or we can use 2 map to hold each a -> and b -> a mappings
+    // Or we can use 2 map to hold each a -> b and b -> a mappings
     public boolean isIsomorphic(String s, String t) {
-        if (s == null || s.length() <= 1) return true;
+        if (s == null || s.isEmpty()) return true;
 
         HashMap<Character, Character> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
@@ -36,7 +36,6 @@ public class IsomorphicString {
 
         System.out.println("Is Isomorphic foo == bar : " + new IsomorphicString().isIsomorphic("foo", "bar"));
 
-        // title  --  paper
         System.out.println("Is Isomorphic title == paper : " + new IsomorphicString().isIsomorphic("title", "paper"));
 
     }
