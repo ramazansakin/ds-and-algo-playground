@@ -6,6 +6,7 @@ public class LetterCombinationsPhoneNumber {
 
 
     // 2.way with Queue based solution -> LinkedList
+    // It's also better to use String[] for mapping to have better storage efficiency
     String[] mapping = new String[]{"", "", "abc", "def", "ghi", "jkl", "mno", "pqrs", "tuv", "wxyz"};
 
     public List<String> letterCombinations(String digits) {
