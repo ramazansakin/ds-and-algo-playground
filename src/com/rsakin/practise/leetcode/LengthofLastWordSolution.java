@@ -16,7 +16,7 @@ public class LengthofLastWordSolution {
     // 2.way without using split, it ll be like tracing all the list
     // and then check ' ' characters occurs and take a startIndex int to keep
     // starting index of the last string
-    // actually this is not efficient, for better effciency, instead of tracing the list from 0, we can start from end
+    // actually this is not efficient, for better efficiency, instead of tracing the list from 0, we can start from end
     // then just check if there is ' ' char and return the length but the input might be single string
     // then check also the index is 0 ? it ll be more efficient !!!
 
