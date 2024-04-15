@@ -1,6 +1,7 @@
 package com.rsakin.practise.leetcode;
 
 import java.util.HashSet;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class LongestConsecutiveSequenceSolution {
 
@@ -14,8 +15,18 @@ public class LongestConsecutiveSequenceSolution {
 //    Input: nums = [0,3,7,2,5,8,4,6,0,1]
 //    Output: 9
 
+    // Time: O(n) to add all numbers to set,
+    // check longest consecutive -> O(n)
+    // Totally, O(2 * n) => O(n)
+
+    // If we use sorted type of data structure like tree-based, TreeSet,
+    // while adding all the numbers, it takes O(n.logn).
+    // So its not timely efficient to use, and also while checking
+    // it ll also take n * logn, because of tree retrieval is logn
+
     public int longestConsecutive(int[] nums) {
 
+        // Remove duplicates
         HashSet<Integer> numSet = new HashSet<>();
         for (int num : nums) {
             numSet.add(num);
@@ -33,8 +44,10 @@ public class LongestConsecutiveSequenceSolution {
                     currentStreak++;
                     // If you add the below line, it ll cause java.util.ConcurrentModificationException
                     // So you can not edit the array while tracing it!!!
-                    // If you want to do that then you need to use any Concurrent HashSet implementation like
+                    // If you want to do that, then you need to use any Concurrent HashSet implementation like
+                    // numSet = new ConcurrentHashMap<>()
                     // numSet.remove(num);
+                    // when you remove it, you dont have to trace already visited items again to enhance perf
 
                     // Alternative
                     // Or we can use a HashMap like number with Boolean which is for visited status
