@@ -4,7 +4,12 @@ import java.util.*;
 
 public class LongestValidParentheses {
 
-    public int longestValidParentheses(String s) {
+
+    // (()())()(()))
+    // we need to add -1 first to prevent NPE/Null Pointer Error on first pop
+    // Then check the latest close index with latest open index and get diff
+
+    public static int longestValidParentheses(String s) {
         int maxans = 0;
         Stack<Integer> stack = new Stack<>();
         stack.push(-1);
@@ -25,7 +30,26 @@ public class LongestValidParentheses {
 
     public static void main(String[] args) {
 
-        System.out.println("Max Valid Parenthesis : " + new LongestValidParentheses().longestValidParentheses("(()"));
+        // Test cases
+        String[] testCases = {
+                "(()", // Expected: 2
+                ")()())", // Expected: 4
+                "", // Expected: 0
+                "(", // Expected: 0
+                ")", // Expected: 0
+                "((()))", // Expected: 6
+                "()(()", // Expected: 2
+                "()()()", // Expected: 6
+                "((()()))", // Expected: 8
+                "((())))())" // Expected: 6
+        };
+
+        // Run tests
+        for (String testCase : testCases) {
+            int result = longestValidParentheses(testCase);
+            System.out.println("Test case: " + testCase + ", Result: " + result);
+        }
+
     }
 
 }
