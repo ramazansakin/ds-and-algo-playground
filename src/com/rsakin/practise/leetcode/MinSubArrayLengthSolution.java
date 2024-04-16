@@ -43,7 +43,7 @@ public class MinSubArrayLengthSolution {
                 {{2, 3, 1, 2, 4, 3}, {7}},              // Expected: 2
                 {{1, 4, 4}, {4}},                       // Expected: 1
                 {{1, 1, 1, 1, 1, 1, 1, 1}, {11}},       // Expected: 0
-                {{1,2,3,4,5}, {15}}                     // Expected: 5
+                {{1, 2, 3, 4, 5}, {15}}                 // Expected: 5
         };
 
         for (int[][] testCase : testCases) {
