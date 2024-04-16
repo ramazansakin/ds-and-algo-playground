@@ -3,12 +3,12 @@ package com.rsakin.practise.Algo;
 import java.util.LinkedList;
 
 // DFS algorithm in Java
-class Graph {
+public class DFSGraph {
     private LinkedList<Integer>[] adjList;
     private boolean[] visited;
 
     // Graph creation
-    Graph(int vertices) {
+    DFSGraph(int vertices) {
         adjList = new LinkedList[vertices];
         visited = new boolean[vertices];
 
@@ -22,18 +22,18 @@ class Graph {
     }
 
     // DFS algorithm
-    void DFS(int vertex) {
+    void dfs(int vertex) {
         visited[vertex] = true;
         System.out.print(vertex + " ");
 
         for (int adj : adjList[vertex]) {
             if (!visited[adj])
-                DFS(adj);
+                dfs(adj);
         }
     }
 
     public static void main(String[] args) {
-        Graph g = new Graph(4);
+        DFSGraph g = new DFSGraph(4);
 
         g.addEdge(0, 1);
         g.addEdge(0, 2);
@@ -42,6 +42,6 @@ class Graph {
 
         System.out.println("Following is Depth First Traversal");
 
-        g.DFS(0);
+        g.dfs(0);
     }
 }
