@@ -59,6 +59,25 @@ public class MergeIntervalsSolution {
         int[][] mergedIntervals2 = solution.merge(intervals2);
         System.out.println("\nMerged intervals for Example 2:");
         printIntervals(mergedIntervals2);
+
+
+        System.out.println("------------------------------------------------------");
+        // Solution without sorting test
+        MergeIntervalsSolution mergeIntervals = new MergeIntervalsSolution();
+
+        List<Interval> intervals = new ArrayList<>();
+        intervals.add(new Interval(1, 3));
+        intervals.add(new Interval(2, 6));
+        intervals.add(new Interval(8, 10));
+        intervals.add(new Interval(15, 18));
+
+        List<Interval> merged = mergeIntervals.merge(intervals);
+
+        System.out.print("Merged Intervals: ");
+        for (Interval interval : merged) {
+            System.out.print("[" + interval.start + "," + interval.end + "] ");
+        }
+
     }
 
     private static void printIntervals(int[][] intervals) {
@@ -66,5 +85,53 @@ public class MergeIntervalsSolution {
             System.out.println(Arrays.toString(interval));
         }
     }
+
+
+    // ######################################
+    // ### Solution without sorting
+    static class Interval {
+        int start;
+        int end;
+
+        Interval() {
+            start = 0;
+            end = 0;
+        }
+
+        Interval(int s, int e) {
+            start = s;
+            end = e;
+        }
+    }
+
+    public List<Interval> merge(List<Interval> intervals) {
+        if (intervals == null || intervals.size() <= 1)
+            return intervals;
+
+        List<Interval> merged = new ArrayList<>();
+
+        for (int i = 0; i < intervals.size(); i++) {
+            Interval current = intervals.get(i);
+            boolean mergedWithPrevious = false;
+
+            for (Interval mergedInterval : merged) {
+                if (current.start <= mergedInterval.end && current.end >= mergedInterval.start) {
+                    // Merge intervals
+                    mergedInterval.start = Math.min(current.start, mergedInterval.start);
+                    mergedInterval.end = Math.max(current.end, mergedInterval.end);
+                    mergedWithPrevious = true;
+                    break;
+                }
+            }
+
+            if (!mergedWithPrevious) {
+                // If the current interval did not merge with any previous interval, add it to the result
+                merged.add(current);
+            }
+        }
+
+        return merged;
+    }
+
 
 }
