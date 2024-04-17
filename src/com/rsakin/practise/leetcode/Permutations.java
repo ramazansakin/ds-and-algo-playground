@@ -33,6 +33,11 @@ public class Permutations {
         System.out.println("Solution for " + Arrays.toString(nums) + " : ");
         new Permutations().permute(nums).forEach(System.out::print);
 
+        System.out.println("\n\n-----------------------------------");
+        int[] nums2 = {1, 1, 1, 5};
+        System.out.println("Solution for " + Arrays.toString(nums2) + " : ");
+        new Permutations().permute(nums2).forEach(System.out::print);
+
     }
 
 }

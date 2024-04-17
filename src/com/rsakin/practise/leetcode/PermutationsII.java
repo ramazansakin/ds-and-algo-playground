@@ -34,6 +34,12 @@ public class PermutationsII {
         System.out.println("Solution for " + Arrays.toString(nums) + " : ");
         new PermutationsII().permuteUnique(nums).forEach(System.out::print);
 
+        System.out.println("\n-------------------------------------");
+        int[] nums2 = {1, 2, 3};
+        System.out.println("Solution for " + Arrays.toString(nums2) + " : ");
+        new PermutationsII().permuteUnique(nums2).forEach(System.out::print);
+
+
     }
 
 }
