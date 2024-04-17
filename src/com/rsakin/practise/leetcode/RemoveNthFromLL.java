@@ -41,15 +41,6 @@ public class RemoveNthFromLL {
         return head;
     }
 
-    public static void printLL(ListNode head) {
-        ListNode temp = head;
-        while (temp != null) {
-            System.out.print(temp.val + " ---> ");
-            temp = temp.next;
-        }
-        System.out.println("NULL");
-    }
-
     public static void main(String[] args) {
 
         ListNode node = new ListNode(1);
@@ -71,11 +62,27 @@ public class RemoveNthFromLL {
 
     }
 
+    public static void printLL(ListNode head) {
+        ListNode temp = head;
+        while (temp != null) {
+            System.out.print(temp.val + " ---> ");
+            temp = temp.next;
+        }
+        System.out.println("NULL");
+    }
+
+
 
     // Alternative solution like, we can find the length of the LL by iterating to null
     // then get size - n = firstNth position, if its lower than 0, return null
     // If its greater or equal to 0, then traverse the LL by firstNth - 1 ( - 1 for placing previous node to delete next easily) and just assign it like,
     // temp.next = temp.next.next to delete temp
+
+    // For Exp;
+    // 1 -> 2 -> 3 -> 4 -> NULL
+    // Last 3rd means here is first 2nd,
+    // how to know = size - lastNth = firstNth
+    // So, 4 - 3 = 1
 
 
 }
