@@ -35,33 +35,4 @@ public class Permutations {
 
     }
 
-
-    // Another recursive approach
-    // this is little bit more complex than first backtracking solution
-    public List<List<Integer>> permute2(int[] nums) {
-        List<Integer> list = Arrays.stream(nums).boxed().collect(Collectors.toList());
-        return permute(list);
-    }
-
-    public List<List<Integer>> permute(List<Integer> nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        if (nums.size() == 1) {
-            result.add(nums);
-            return result;
-        }
-
-        for (int i = 0; i < nums.size(); i++) {
-            Integer num = nums.remove(i);
-            List<List<Integer>> permutations = permute(new ArrayList(nums));
-
-            for (List<Integer> perm : permutations) {
-                perm.add(0, num);
-                result.add(perm);
-            }
-            nums.add(i, num);
-        }
-
-        return result;
-    }
-
 }
