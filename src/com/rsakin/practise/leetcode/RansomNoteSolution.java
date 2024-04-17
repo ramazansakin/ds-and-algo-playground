@@ -38,16 +38,16 @@ public class RansomNoteSolution {
         System.out.println(canConstruct(ransomNote1, magazine1)); // Output: false
 
         String ransomNote2 = "aa";
-        String magazine2 = "ab";
+        String magazine2 = "bbbbbaa";
         System.out.println(canConstruct(ransomNote2, magazine2)); // Output: false
 
         String ransomNote3 = "aa";
         String magazine3 = "aab";
-        System.out.println(canConstruct(ransomNote3, magazine3)); // Output: true
+        System.out.println(canConstruct2(ransomNote3, magazine3)); // Output: true
 
         String ransomNote4 = "fihjjjjei";
         String magazine4 = "hjibagacbhadfaefdjaeaebgi";
-        System.out.println(canConstruct(ransomNote4, magazine4)); // Output: false
+        System.out.println(canConstruct3(ransomNote4, magazine4)); // Output: false
 
     }
 
@@ -77,13 +77,13 @@ public class RansomNoteSolution {
     // and we can keep updating this array like index[c-'a'] = i+1 , after finding each time the index
     // to search for the char in magazine again after the last index found whether still there is a next one
     // or no other then false
-    public boolean canConstruct3(String ransomNote, String magazine) {
+    public static boolean canConstruct3(String ransomNote, String magazine) {
         int[] index = new int[26];
-        for(char c: ransomNote.toCharArray()){
-            int i = magazine.indexOf(c, index[c-'a']);
-            if(i == -1)
+        for (char c : ransomNote.toCharArray()) {
+            int i = magazine.indexOf(c, index[c - 'a']);
+            if (i == -1)
                 return false;
-            index[c-'a'] = i+1;
+            index[c - 'a'] = i + 1;
         }
         return true;
     }
