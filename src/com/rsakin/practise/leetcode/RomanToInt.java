@@ -18,7 +18,7 @@ public class RomanToInt {
 
         result += romanToInt.get(s.charAt(s.length() - 1));
         for (int i = s.length() - 2; i >= 0; i--) {
-            if (romanToInt.get(s.charAt(i)) >= romanToInt.get(s.charAt(i + 1)))
+            if (romanToInt.get(s.charAt(i)) > romanToInt.get(s.charAt(i + 1)))
                 result += romanToInt.get(s.charAt(i));
             else
                 result -= romanToInt.get(s.charAt(i));
@@ -28,9 +28,9 @@ public class RomanToInt {
 
     public static void main(String[] args) {
 
-        System.out.println("Roman to Int for XIV : " + new RomanToInt().romanToInt("XIV"));
+        System.out.println("Roman to Int for XIV : " + new RomanToInt().romanToInt("XIV")); // 14
 
-        System.out.println("Roman to Int for MCMXCIV : " + new RomanToInt().romanToInt("MCMXCIV"));
+        System.out.println("Roman to Int for MCMXCIV : " + new RomanToInt().romanToInt("MCMXCIV")); // 1994
 
     }
 }
