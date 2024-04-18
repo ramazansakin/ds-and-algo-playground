@@ -52,8 +52,10 @@ public class SingleThreadedCPU {
     public static void main(String[] args) {
 
         int[][] tasks = {{1, 2}, {2, 4}, {3, 2}, {4, 1}};
+        System.out.println("Initial array : " + Arrays.deepToString(tasks));
 
-        System.out.println("Result : " + Arrays.toString(tasks));
+        int[] order = new SingleThreadedCPU().getOrder(tasks);
+        System.out.println("Solution : " + Arrays.toString(order));
 
     }
 
