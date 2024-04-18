@@ -14,26 +14,27 @@ public class RotateImage {
     // 8 5 2
     // 9 6 3
 
-    // i -> outer, j -> inner index
-    // inner-loop : i: max -> 0, j -> static
-    // outer-loop : j: 0 -> max
-
-
-    // 1 2 3 4
-    // 5 6 7 8
-    // a b c d
-    // e f g h
-
+    // First we need to transpose the matrix, it will be swap(matrix[i][j], matrix[j][i])
+    // Then, flip the matrix horizontally
 
     public void rotate(int[][] matrix) {
-        int len = matrix.length;
-        for (int i = 0; i < (len + 1) / 2; i++) {
-            for (int j = 0; j < len / 2; j++) {
-                int temp = matrix[len - 1 - j][i];
-                matrix[len - 1 - j][i] = matrix[len - 1 - i][len - j - 1];
-                matrix[len - 1 - i][len - j - 1] = matrix[j][len - 1 - i];
-                matrix[j][len - 1 - i] = matrix[i][j];
-                matrix[i][j] = temp;
+        int n = matrix.length;
+
+        // Transpose the matrix
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = temp;
+            }
+        }
+
+        // Reverse each row
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n / 2; j++) {
+                int temp = matrix[i][j];
+                matrix[i][j] = matrix[i][n - 1 - j];
+                matrix[i][n - 1 - j] = temp;
             }
         }
     }
