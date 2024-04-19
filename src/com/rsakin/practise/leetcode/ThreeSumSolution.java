@@ -22,7 +22,7 @@ public class ThreeSumSolution {
     // 2nd and 3rd variables ll be chosen on "Complementary Map"
     // It provides better efficiency because NO NEED to sort list
     // Time: O(n^2) , Space: O(n) - Map usage
-    public List<List<Integer>> threeSum(int[] nums) {
+    public static List<List<Integer>> threeSum(int[] nums) {
         Set<List<Integer>> res = new HashSet<>();
         Arrays.sort(nums);
         for (int first = 0; first < nums.length - 2; first++) {
@@ -38,6 +38,14 @@ public class ThreeSumSolution {
             }
         }
         return new ArrayList<>(res);
+    }
+
+    public static void main(String[] args) {
+
+        int[] arr = {-2, -2, 4, 1, 1, 1, 1, 1, 7};
+
+        System.out.println("Solution for " + Arrays.toString(arr) + " == " + threeSum(arr));
+
     }
 
 }
