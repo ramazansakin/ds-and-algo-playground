@@ -6,6 +6,7 @@ public class ThreeSumClosest {
 
     public static int threeSumClosest(int[] nums, int target) {
         int closestSum = Integer.MAX_VALUE;
+        // Need to sort array, or we can use hashmap to hold differences
         Arrays.sort(nums);
         for (int firstInd = 0; firstInd < nums.length - 2; firstInd++) {
             int secondInd = firstInd + 1;
@@ -22,6 +23,15 @@ public class ThreeSumClosest {
             }
         }
         return closestSum;
+    }
+
+
+    public static void main(String[] args) {
+
+        int[] arr = {-2, -2, 4, 1, 1, 1, 1, 1, 7};
+
+        System.out.println("Solution for " + Arrays.toString(arr) + " == " + threeSumClosest(arr, 5));
+
     }
 
 }
