@@ -32,7 +32,7 @@ public class TwoSum {
 
 
     // 3.way - better efficient and it DOES NOT contain extra space and this solution for "ORDERED LIST"
-    // If the list is not ordered, then we can order the list first then use this method as well!
+    // Or we need to sort the list first, but it ll take O(n.log(n)) time complexity first, we need to take care that as well
     // Arrays.sort(numbers);
     public int[] twoSum2(int[] numbers, int target) {
         int left = 0;
