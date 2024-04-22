@@ -27,9 +27,13 @@ public class ValidParanthesis {
 
         System.out.println("IsValid statement :  -> " + isValid2(""));
 
-        System.out.println("IsValid statement : ()()()))((()()( -> " + isValid("()()()))((()()("));
+        System.out.println("IsValid statement : ()()()))((()()( -> " + isValid2("()()()))((()()("));
 
-        System.out.println("IsValid statement : (()()()((()))) -> " + isValid("(()()()((())))"));
+        System.out.println("IsValid statement : [(){}()((()))] -> " + isValid("[(){}()((()))]"));
+
+        System.out.println("IsValid statement : (()()()((()))) -> " + isValid2("(()()()((())))"));
+
+        System.out.println("IsValid statement : [(()[]()(({})))] -> " + isValid("[(()[]()(({})))]"));
 
     }
 
