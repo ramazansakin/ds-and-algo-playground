@@ -1,5 +1,14 @@
 package com.rsakin.practise.leetcode;
 
+// Input Word : COMEONDADDY
+// Row : 3
+
+// Result
+// COD
+// OENAD
+// MDY
+// Append all together the above 3 strings like : CODOENADMDY
+
 public class ZigZagString {
 
     public String convert(String s, int numRows) {
@@ -27,7 +36,7 @@ public class ZigZagString {
         ZigZagString solution = new ZigZagString();
 
         // Test case 1
-        String s1 = "PAYPALISHIRING";
+        String s1 = "COMEONDADDY";
         int numRows1 = 3;
         String result1 = solution.convert(s1, numRows1);
         System.out.println("Test Case 1:");
@@ -35,7 +44,7 @@ public class ZigZagString {
         System.out.println("Output: \"" + result1 + "\"");
 
         // Test case 2
-        String s2 = "PAYPALISHIRING";
+        String s2 = "COMEONDADY";
         int numRows2 = 4;
         String result2 = solution.convert(s2, numRows2);
         System.out.println("\nTest Case 2:");
