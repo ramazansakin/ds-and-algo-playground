@@ -5,13 +5,14 @@ import java.util.Queue;
 
 // BFS algorithm in Java
 public class BFSGraph {
-    private int V;
     private LinkedList<Integer>[] adjList;
+    private boolean[] visited;
 
     // Create a graph
     BFSGraph(int v) {
-        V = v;
         adjList = new LinkedList[v];
+        visited = new boolean[v];
+
         for (int i = 0; i < v; ++i)
             adjList[i] = new LinkedList();
     }
@@ -23,7 +24,6 @@ public class BFSGraph {
 
     // BFS algorithm
     void bfs(int vertex) {
-        boolean[] visited = new boolean[V];
         Queue<Integer> queue = new LinkedList<>();
 
         visited[vertex] = true;
