@@ -98,33 +98,28 @@ class MaxLenZeroSumSub {
 
     // Returns length of the maximum length
     // subarray with 0 sum
-    static int maxLen(int arr[]) {
-        // Creates an empty hashMap hM
-        HashMap<Integer, Integer> hM = new HashMap<>();
+    public static int maxLengthZeroSumSubarray(int[] nums) {
+        Map<Integer, Integer> sumIndexMap = new HashMap<>();
+        int maxLength = 0;
+        int sum = 0;
 
-        int sum = 0; // Initialize sum of elements
-        int max_len = 0; // Initialize result
+        // Insert initial sum and index (-1) into the map
+        sumIndexMap.put(0, -1);
 
-        // Traverse through the given array
-        for (int i = 0; i < arr.length; i++) {
-            // Add current element to sum
-            sum += arr[i];
+        for (int i = 0; i < nums.length; i++) {
+            sum += nums[i];
 
-            if (sum == 0)
-                max_len = i + 1;
-
-            // Look this sum in hash table
-            Integer prev_i = hM.get(sum);
-
-            // If this sum is seen before, then update
-            // max_len if required
-            if (prev_i != null)
-                max_len = Math.max(max_len, i - prev_i);
-            else // Else put this sum in hash table
-                hM.put(sum, i);
+            // If the sum is encountered again, update the maxLength
+            if (sumIndexMap.containsKey(sum)) {
+                int length = i - sumIndexMap.get(sum);
+                maxLength = Math.max(maxLength, length);
+            } else {
+                // Otherwise, insert the sum and its index into the map
+                sumIndexMap.put(sum, i);
+            }
         }
 
-        return max_len;
+        return maxLength;
     }
 
     // Drive's code
@@ -132,7 +127,7 @@ class MaxLenZeroSumSub {
         int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
 
         // Function call
-        System.out.println("Length of the longest 0 sum subarray is " + maxLen(arr));
+        System.out.println("Length of the longest 0 sum subarray is " + maxLengthZeroSumSubarray(arr));
 
     }
 
