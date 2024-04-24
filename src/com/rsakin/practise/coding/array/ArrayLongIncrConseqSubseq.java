@@ -4,6 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 public class ArrayLongIncrConseqSubseq {
+
     static int LongIncrConseqSubseq(int arr[], int n) {
         // create hashmap to save latest consequent
         // number as "key" and its length as "value"
