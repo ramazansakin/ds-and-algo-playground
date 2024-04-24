@@ -2,7 +2,7 @@ package com.rsakin.practise.Algo;
 
 public class Dijkstra {
 
-    public static void dijkstra(int[][] graph, int source) {
+    public static void dijkstra(int[][] graph, int initialVertex) {
         int count = graph.length;
         boolean[] visitedVertex = new boolean[count];
         int[] distance = new int[count];
@@ -12,7 +12,7 @@ public class Dijkstra {
         }
 
         // Distance of self loop is zero
-        distance[source] = 0;
+        distance[initialVertex] = 0;
         for (int i = 0; i < count; i++) {
 
             // Update the distance between neighbouring vertex and source vertex
@@ -26,8 +26,9 @@ public class Dijkstra {
                 }
             }
         }
+
         for (int i = 0; i < distance.length; i++) {
-            System.out.println(String.format("Distance from %s to %s is %s", source, i, distance[i]));
+            System.out.println(String.format("Distance from %s to %s is %s", initialVertex, i, distance[i]));
         }
 
     }
@@ -53,8 +54,8 @@ public class Dijkstra {
                 {2, 0, 1, 0, 0},
                 {0, 0, 3, 0, 0}};
 
-        Dijkstra T = new Dijkstra();
-        T.dijkstra(graph, 0);
+        new Dijkstra().dijkstra(graph, 0);
+
     }
 
 }
