@@ -61,7 +61,7 @@ public class LinkedListReverse {
         int n = printList(head);
 
         // print reverse list
-        System.out.println("\nReversed Linked list:");
+        System.out.println("\nReversed Linked list with size: " + n);
         printReverse(head);
         System.out.println();
     }
