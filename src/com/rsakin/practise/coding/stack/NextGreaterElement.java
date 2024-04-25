@@ -4,44 +4,42 @@ import java.util.*;
 
 public class NextGreaterElement {
 
-    public static void main(String[] args) {
+    public int[] nextGreaterElement(int[] nums) {
+        int[] result = new int[nums.length];
+        Stack<Integer> stack = new Stack<>();
 
-        int arr[] = {11, 13, 21, 3, 5, 25, 40, 7, 6, 1};
-        printNGE(arr);
+        // Iterate the array from right to left
+        for (int i = nums.length - 1; i >= 0; i--) {
+            // Pop elements from the stack while they are smaller than the current element
+            while (!stack.isEmpty() && stack.peek() <= nums[i]) {
+                stack.pop();
+            }
 
+            // If stack is empty, there is no greater element to the right
+            if (stack.isEmpty()) {
+                result[i] = -1;
+            } else {
+                result[i] = stack.peek();
+            }
+
+            // Push current element onto the stack
+            stack.push(nums[i]);
+        }
+
+        return result;
     }
 
-    private static void printNGE(int[] arr) {
-        int n = arr.length;
-        if (n < 1) {
-            System.err.println("Array needs to have at least 1 element!");
-            return;
+    public static void main(String[] args) {
+
+        NextGreaterElement solution = new NextGreaterElement();
+        int[] nums = {4, 5, 2, 25};
+        int[] result = solution.nextGreaterElement(nums);
+
+        System.out.println("Next Greater Element:");
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println(nums[i] + " --> " + result[i]);
         }
 
-        int[] ngeArr = new int[n];
-        Stack<Integer> st = new Stack<>();
-        ngeArr[n - 1] = -1;
-
-        for (int i = n - 1; i > 0; --i) {
-            if (arr[i] < arr[i - 1]) {
-                while (!st.empty()) {
-                    if (st.peek() > arr[i - 1]) {
-                        ngeArr[i - 1] = st.peek();
-                        break;
-                    } else st.pop();
-                }
-
-                if (st.empty()) ngeArr[i - 1] = -1;
-
-            } else {
-                ngeArr[i - 1] = arr[i];
-                st.push(arr[i]);
-            }
-        }
-
-        for (int i = 0; i < n; i++) {
-            System.out.println(ngeArr[i]);
-        }
     }
 
 }
