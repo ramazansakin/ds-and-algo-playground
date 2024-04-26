@@ -2,7 +2,7 @@ package com.rsakin.practise.coding.string;
 
 public class LongestCommonPrefix {
 
-    public String longestCommonPrefix(String[] strs) {
+    public static String longestCommonPrefix(String[] strs) {
         if (strs == null || strs.length == 0) return "";
 
         for (int i = 0; i < strs[0].length(); i++) {
@@ -15,6 +15,20 @@ public class LongestCommonPrefix {
         }
 
         return strs[0];
+    }
+
+    public static void main(String[] args) {
+        // Test Case 1
+        String[] testCase1 = {"flower", "flow", "flight"};
+        System.out.println("Test Case 1:");
+        System.out.println("Input: " + java.util.Arrays.toString(testCase1));
+        System.out.println("Output: " + longestCommonPrefix(testCase1));
+
+        // Test Case 2
+        String[] testCase2 = {"dog", "racecar", "car"};
+        System.out.println("\nTest Case 2:");
+        System.out.println("Input: " + java.util.Arrays.toString(testCase2));
+        System.out.println("Output: " + longestCommonPrefix(testCase2));
     }
 
 }
