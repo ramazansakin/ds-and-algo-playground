@@ -2,6 +2,8 @@ package com.rsakin.practise.coding.string;
 
 public class StringLongestPalindromicSubString {
 
+
+    // "Expand Around Center" approach
     int start = 0, maxLen = 0;
     public String longestPalindrome(String s) {
         for (int i = 0; i < s.length(); i++) {
