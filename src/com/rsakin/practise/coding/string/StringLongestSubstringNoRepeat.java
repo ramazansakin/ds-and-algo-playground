@@ -1,18 +1,10 @@
 package com.rsakin.practise.coding.string;
 
 
-// Normalde naive ve ya brute-force yaklaşımda direk bütün ikililer denenir ve klasik olarak,
-// bu O(n^2) dir. Burda birde denenen her bir substring in distinct olup olmadıgının kontrolü de işin içine girince
-// O(n^3) olarak bit time komplexity karşımıza çıkıyor. Aynı şekilde neredeyse bütün String sorularının
-// ve ya benzer şekilde array sorularınında basit çözümünde bu 2'li iç içe for-loop yatıyor ama gel-geleim iş daha optimum
-// bir çözüme gelince burada işte "prefixSum", "slidingWindow", "Dynamic Programming", "Two pointer" gibi yaklaşımlar ile
-// optimum çözüme yaklaşılabiliyor.
-
-
 import java.util.HashMap;
 
 // ## Sliding Window
-// Length of the longest substring without repeating characters using Sliding Window in O(n2) time:
+// Length of the longest substring without repeating characters using Sliding Window in O(n) time:
 public class StringLongestSubstringNoRepeat {
 
     public static int lengthOfLongestSubstring(String s) {
