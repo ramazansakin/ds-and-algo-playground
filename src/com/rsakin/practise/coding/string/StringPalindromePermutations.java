@@ -6,7 +6,19 @@ import java.util.Map;
 public class StringPalindromePermutations {
 
     public static void main(String[] args) {
+
+        System.out.println("Test Case-1: ");
         printPalindromePermutations("aababaa");
+        System.out.println("-------------------------------------------");
+
+        System.out.println("Test Case-2: ");
+        printPalindromePermutations("abcddcb");
+        System.out.println("-------------------------------------------");
+
+        System.out.println("Test Case-3: ");
+        printPalindromePermutations("abcdeeedcabb");
+        System.out.println("-------------------------------------------");
+
     }
 
     public static void printPalindromePermutations(String s) {
