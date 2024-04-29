@@ -31,9 +31,6 @@ public class Atoi {
         if (sign == 1 && sum > Integer.MAX_VALUE) return Integer.MAX_VALUE;
         if (sign == -1 && (-1) * sum < Integer.MIN_VALUE) return Integer.MIN_VALUE;
 
-        // Return 0 if no digits were found
-        if (start == 0 && !Character.isDigit(s.charAt(0))) return 0;
-
         return (int) sum * sign;
     }
 
