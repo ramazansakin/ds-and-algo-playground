@@ -34,9 +34,9 @@ public class CheckIsSymetric {
         StringBuilder rightPostorder = new StringBuilder();
 
         inorderTraversal(root, leftInorder);
-        mirroredPostorderTraversal(root, rightPostorder);
+        mirroredInorderTraversal(root, rightPostorder);
 
-        return leftInorder.toString().equals(rightPostorder.toString());
+        return leftInorder.toString().contentEquals(rightPostorder);
     }
 
     private void inorderTraversal(TreeNode node, StringBuilder sb) {
@@ -49,14 +49,14 @@ public class CheckIsSymetric {
         inorderTraversal(node.right, sb);
     }
 
-    private void mirroredPostorderTraversal(TreeNode node, StringBuilder sb) {
+    private void mirroredInorderTraversal(TreeNode node, StringBuilder sb) {
         if (node == null) {
             sb.append("#"); // Placeholder for null nodes
             return;
         }
-        mirroredPostorderTraversal(node.right, sb);
+        mirroredInorderTraversal(node.right, sb);
         sb.append(node.val);
-        mirroredPostorderTraversal(node.left, sb);
+        mirroredInorderTraversal(node.left, sb);
     }
 
     public static void main(String[] args) {
