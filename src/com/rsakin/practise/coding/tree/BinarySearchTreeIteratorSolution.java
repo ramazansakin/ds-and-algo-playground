@@ -12,11 +12,12 @@ class BSTIterator {
 
     public BSTIterator(TreeNode root) {
         list = new ArrayList<>();
-        createList(root);
         pointer = 0;
+        // traverse the tree
+        createList(root);
     }
 
-    // in-order traverse to build BST as List<Node>
+    // in-order traversal to build BST as List<Node>
     public void createList(TreeNode node) {
         if (node == null) return;
 
@@ -53,37 +54,6 @@ public class BinarySearchTreeIteratorSolution {
         System.out.println(bSTIterator.hasNext()); // Output: true
         System.out.println(bSTIterator.next());    // Output: 20
         System.out.println(bSTIterator.hasNext()); // Output: false
-    }
-
-}
-
-
-class BSTIteratorWithStack {
-    private Stack<TreeNode> stack;
-
-    public BSTIteratorWithStack(TreeNode root) {
-        stack = new Stack<>();
-        pushLeftNodes(root);
-    }
-
-    public int next() {
-        // The next smallest number is at the top of the stack
-        TreeNode node = stack.pop();
-        if (node.right != null) {
-            pushLeftNodes(node.right);
-        }
-        return node.val;
-    }
-
-    public boolean hasNext() {
-        return !stack.isEmpty();
-    }
-
-    private void pushLeftNodes(TreeNode node) {
-        while (node != null) {
-            stack.push(node);
-            node = node.left;
-        }
     }
 
 }
