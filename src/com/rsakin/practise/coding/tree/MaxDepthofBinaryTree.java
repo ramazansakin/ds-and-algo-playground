@@ -21,7 +21,7 @@ class TreeNode {
     }
 }
 
-public class MaximumDepthofBinaryTree {
+public class MaxDepthofBinaryTree {
 
     public int maxDepth(TreeNode root) {
         if (root == null) return 0;
