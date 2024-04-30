@@ -33,9 +33,14 @@ public class CheckValidBST {
 
         // Example usage:
         // Construct a BST
-        TreeNode root = new TreeNode(2);
-        root.left = new TreeNode(1);
-        root.right = new TreeNode(3);
+        TreeNode root = new TreeNode(20);
+        root.left = new TreeNode(10);
+        root.right = new TreeNode(30);
+        root.left.left = new TreeNode(7);
+        root.left.right = new TreeNode(15);
+        root.right.left = new TreeNode(25);
+        root.right.right = new TreeNode(40);
+
 
         // Check if the tree is a BST
         boolean result = checker.isBST(root);
