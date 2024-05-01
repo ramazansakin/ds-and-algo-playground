@@ -29,5 +29,9 @@ public class CountAndSay {
         num = 5;
         System.out.println("Solution for " + num + " : " + new CountAndSay().countAndSay(num));
 
+
+        num = 6;
+        System.out.println("Solution for " + num + " : " + new CountAndSay().countAndSay(num));
+
     }
 }
