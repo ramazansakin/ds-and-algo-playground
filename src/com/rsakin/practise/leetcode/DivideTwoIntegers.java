@@ -33,7 +33,8 @@ public class DivideTwoIntegers {
 
     // Without using shifting
     public static int divide2(int dividend, int divisor) {
-        if (dividend == 1 << 31 && divisor == -1) return (1 << 31) - 1; // edge-case
+        // I can use long for checking the integer overflow/underflow
+        if (dividend == Integer.MAX_VALUE && divisor == -1) return Integer.MIN_VALUE - 1; // edge-case
 
         int tempDividend = Math.abs(dividend);
         int tempDivisor = Math.abs(divisor);
@@ -44,7 +45,7 @@ public class DivideTwoIntegers {
             quotient++;
         }
 
-        return (dividend > 0) == (divisor > 0) ? quotient : -quotient;  // check the sign
+        return (dividend > 0) == (divisor > 0) ? quotient : -quotient;  // check & set the sign
     }
 
 }
