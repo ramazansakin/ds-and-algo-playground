@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 public class FindFirstAndLastPositionElemSortedArray {
 
+    // Binary Search approach to find first and latest number on a sorted array
+    // Normal sorted version of the question solution takes just 2 * O(logn) even logn + log(n/2) :)
+    // if the array is not sorted we could sort the array first but it ll be not feasible because it ll take O(n.logn) to sort
+    // So if the array is not sorted we could try to use map to keep number and indexes and just moving forward on the list until the end,
+    // we could find the first and last occurrence of the requested number
     public int[] searchRange(int[] nums, int target) {
         int[] result = {-1, -1};
 
