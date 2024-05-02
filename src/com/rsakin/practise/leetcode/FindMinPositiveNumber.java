@@ -2,8 +2,8 @@ package com.rsakin.practise.leetcode;
 
 import java.util.Arrays;
 
-public class FindMinPositiveNumber {
 
+public class FindMinPositiveNumber {
 
     public int firstMissingPositive(int[] nums) {
         int i = 0;
@@ -26,8 +26,12 @@ public class FindMinPositiveNumber {
     public static void main(String[] args) {
 
         int[] nums = {3, 4, -1, 1};
-        System.out.println("Positive min number for the array " + Arrays.toString(nums) + " : " +
-                new FindMinPositiveNumber().firstMissingPositive(nums));
+        System.out.println("Positive min number for the array " + Arrays.toString(nums) + " - Next Positive Number :  " +
+                new FindMinPositiveNumber().firstMissingPositive3(nums));
+
+        int[] nums2 = {3, 8, -1, 1, 2, 5, 6, 7};
+        System.out.println("Positive min number for the array " + Arrays.toString(nums2) + " - Next Positive Number :  " +
+                new FindMinPositiveNumber().firstMissingPositive3(nums2));
 
     }
 
@@ -52,9 +56,24 @@ public class FindMinPositiveNumber {
     }
 
 
-    // Another way of solving the problem is holding an another array with length of input array,
+    // Another way of solving the problem is holding another array with length of input array,
     // it can be a boolean array and check each indexes with number in the list and
     // set true the index of status[index] if there is a number like index + 1
-    // after marking all the numbers we can trace the status boolena array and decide the missing positive number
+    // after marking all the numbers we can trace the status boolean array and decide the missing positive number
+    public int firstMissingPositive3(int[] nums) {
+        boolean[] numsIndexes = new boolean[nums.length + 1];
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] > 0)
+                numsIndexes[nums[i]] = true;
+        }
+
+        for (int i = 1; i < numsIndexes.length; i++) {
+            if (!numsIndexes[i]) {
+                return i;
+            }
+        }
+        return -1;  // no answer
+    }
 
 }
