@@ -21,11 +21,11 @@ public class IsPalindromicNumber {
 
     public static void main(String[] args) {
 
-        int number = 1212;
         // tricky way to solve :)
+//        int number = 1212;
         // StringBuilder sb = new StringBuilder(number);
         // String reversedNumber = sb.reverse().toString();
-        System.out.println(number + " is palindromic number : " + new IsPalindromicNumber().isPalindrome(number));
+//        System.out.println(number + " is palindromic number : " + new IsPalindromicNumber().isPalindrome(number));
 
         int number2 = 122221;
         System.out.println(number2 + " is palindromic number : " + new IsPalindromicNumber().isPalindrome(number2));
