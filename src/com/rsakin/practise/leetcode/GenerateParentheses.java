@@ -23,14 +23,16 @@ public class GenerateParentheses {
 
     private void backtrack(List<String> list, String str, int left, int right) {
 
-        if (left < 0 || left > right) return;
+        if (left > right) return;
 
         if (left == 0 && right == 0) {
             list.add(str);
             return;
         }
-        backtrack(list, str + "(", left - 1, right);
-        backtrack(list, str + ")", left, right - 1);
+        if (left > 0)
+            backtrack(list, str + "(", left - 1, right);
+        if (right > 0)
+            backtrack(list, str + ")", left, right - 1);
     }
 
 
