@@ -3,8 +3,8 @@ package com.rsakin.practise.leetcode;
 import java.util.HashSet;
 import java.util.Set;
 
-public class HappyNumberCheck {
 
+public class HappyNumberCheck {
 
     // Example case:
     // 19
@@ -16,9 +16,8 @@ public class HappyNumberCheck {
         Set<Integer> seen = new HashSet<>();    // efficient retrieval check and provide uniqueness
 
         while (n != 1) {
-            if (seen.contains(n)) {
-                return false;   // Detected a cycle, the number is not happy
-            }
+            if (seen.contains(n)) return false;   // Detected a cycle, the number is not happy
+
             seen.add(n);
 
             int sum = 0;
