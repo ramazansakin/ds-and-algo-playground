@@ -8,17 +8,17 @@ public class GroupAnagramsSolution {
 
         Map<String, List<String>> map = new HashMap<>();
         for (String s : strs) {
-            char[] chars = s.toCharArray();
-            // sort all the words to group them depending on related char frequencies
-            Arrays.sort(chars);
-
-            String k = new String(chars);
-            if (!map.containsKey(k)) {
-                map.put(k, new ArrayList<>());
-            }
-            map.get(k).add(s);
+            String k = sortString(s);
+            map.computeIfAbsent(k, k1 -> new ArrayList<>()).add(s);
         }
         return new ArrayList<>(map.values());
+    }
+
+    private static String sortString(String s) {
+        char[] chars = s.toCharArray();
+        // sort all the words to group them depending on related char frequencies
+        Arrays.sort(chars);
+        return new String(chars);
     }
 
     public static void main(String[] args) {
