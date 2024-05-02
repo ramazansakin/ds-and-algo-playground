@@ -16,8 +16,8 @@ public class IntToRoman {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < values.length; i++) {
             while (num >= values[i]) {
-                num -= values[i];
                 sb.append(strs[i]);
+                num -= values[i];
             }
         }
         return sb.toString();
@@ -45,6 +45,10 @@ public class IntToRoman {
 
         int testNumber = 1994;
         System.out.println(testNumber + " as Roman Number : " + new IntToRoman().intToRoman(testNumber));
+
+        System.out.println("-------");
+        int testNumber2 = 2577;
+        System.out.println(testNumber2 + " as Roman Number : " + new IntToRoman().intToRoman2(testNumber2));
 
     }
 
