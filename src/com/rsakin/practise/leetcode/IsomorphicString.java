@@ -32,11 +32,11 @@ public class IsomorphicString {
 
     public static void main(String[] args) {
 
-        System.out.println("Is Isomorphic egg == add : " + new IsomorphicString().isIsomorphic("egg", "add"));
+        System.out.println("Is Isomorphic egg == add : " + new IsomorphicString().isIsomorphic("egg", "add")); // true
 
-        System.out.println("Is Isomorphic foo == bar : " + new IsomorphicString().isIsomorphic("foo", "bar"));
+        System.out.println("Is Isomorphic foo == bar : " + new IsomorphicString().isIsomorphic("foo", "bar")); // false
 
-        System.out.println("Is Isomorphic title == paper : " + new IsomorphicString().isIsomorphic("title", "paper"));
+        System.out.println("Is Isomorphic title == paper : " + new IsomorphicString().isIsomorphic("title", "paper")); // true
 
     }
 
