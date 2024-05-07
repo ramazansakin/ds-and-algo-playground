@@ -48,7 +48,7 @@ public class MergeTwoSortedList {
         ListNode node4 = new ListNode(7);
         ListNode node5 = new ListNode(8);
 
-        // combine them
+        // link them
         node.next = node2;
         node2.next = node3;
         node3.next = node4;
@@ -64,6 +64,7 @@ public class MergeTwoSortedList {
         ListNode node24 = new ListNode(4);
         ListNode node25 = new ListNode(5);
 
+        // link them
         node21.next = node22;
         node22.next = node23;
         node23.next = node24;
@@ -72,7 +73,7 @@ public class MergeTwoSortedList {
         ListNode list2 = node21;
 
         System.out.println("Solution with Recursive : ");
-        printLL(mergeTwoLists(list1, list2));
+        printLL(mergeTwoLists3(list1, list2));
 
         // you can check the input lists are being modified
 //        printLL(list1);
@@ -87,6 +88,33 @@ public class MergeTwoSortedList {
             temp = temp.next;
         }
         System.out.println("NULL");
+    }
+
+    // Alternative Recursive Solution
+    public static ListNode mergeTwoLists3(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode(0);
+        ListNode cur = dummy;
+        mergeTwoLists(list1, list2, cur);
+        return dummy.next;
+    }
+
+    public static ListNode mergeTwoLists(ListNode list1, ListNode list2, ListNode result) {
+        if (list1 == null) {
+            result.next = list2;
+            return result;
+        }
+        if (list2 == null) {
+            result.next = list1;
+            return result;
+        }
+        if (list1.val < list2.val) {
+            result.next = list1;
+            mergeTwoLists(list1.next, list2, result.next);
+        } else {
+            result.next = list2;
+            mergeTwoLists(list1, list2.next, result.next);
+        }
+        return result;
     }
 
 }
