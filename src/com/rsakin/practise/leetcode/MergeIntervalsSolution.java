@@ -42,6 +42,7 @@ public class MergeIntervalsSolution {
         // Add the last merged interval
         merged.add(new int[]{start, end});
 
+        // convert List of 1D-array to 2D-array
         return merged.toArray(new int[merged.size()][]);
     }
 
