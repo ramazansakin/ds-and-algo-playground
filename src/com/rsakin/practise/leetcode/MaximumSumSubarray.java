@@ -1,5 +1,13 @@
 package com.rsakin.practise.leetcode;
 
+
+// 1.way of solving this problem might be a naive solution which is brute-force checking
+// all possible sub arrays but it causes O(n^2) time complexity
+
+// 2.way is more efficient way to solve this problem is sliding window approach
+// it provides enhanced traversal of just possible bigger sub arrays in one loop
+// so it takes O(n) effectively
+
 public class MaximumSumSubarray {
 
     public static int[] maxSubArray(int[] nums) {
