@@ -111,8 +111,7 @@ public class MergeIntervalsSolution {
 
         List<Interval> merged = new ArrayList<>();
 
-        for (int i = 0; i < intervals.size(); i++) {
-            Interval current = intervals.get(i);
+        for (Interval current : intervals) {
             boolean mergedWithPrevious = false;
 
             for (Interval mergedInterval : merged) {
