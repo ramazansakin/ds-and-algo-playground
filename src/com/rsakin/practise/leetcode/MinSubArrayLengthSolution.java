@@ -19,7 +19,6 @@ public class MinSubArrayLengthSolution {
         // 2, 3, 1, 2
 
         // we can keep start index
-
         int sum = 0, startingInd = 0, minLength = nums.length + 1;
         for (int i = 0; i < nums.length; i++) {
             sum += nums[i];
