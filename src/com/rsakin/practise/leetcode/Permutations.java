@@ -34,9 +34,16 @@ public class Permutations {
         new Permutations().permute(nums).forEach(System.out::print);
 
         System.out.println("\n\n-----------------------------------");
-        int[] nums2 = {1, 1, 1, 5};
+
+        int[] nums2 = {1, 2, 4, 5};
         System.out.println("Solution for " + Arrays.toString(nums2) + " : ");
         new Permutations().permute(nums2).forEach(System.out::print);
+
+        System.out.println("\n\n-----------------------------------");
+
+        int[] nums3 = {1, 1, 4, 5};
+        System.out.println("Solution for " + Arrays.toString(nums3) + " : ");
+        new Permutations().permute(nums3).forEach(System.out::print);
 
     }
 
