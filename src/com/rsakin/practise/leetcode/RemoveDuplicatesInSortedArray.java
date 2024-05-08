@@ -15,6 +15,21 @@ public class RemoveDuplicatesInSortedArray {
         return count;
     }
 
+    public static void main(String[] args) {
+
+        int[] nums = {-3, -1, 0, 0, 0, 3, 3};
+        System.out.println("Result : " + removeElement(nums, 0));
+        System.out.println("After remove Elements : " + Arrays.toString(nums));
+
+        System.out.println("--------------------------------------");
+
+        int[] nums2 = {-3, -1, 0, 0, 0, 3, 3};
+        removeDuplicates(nums2);
+        System.out.println("After remove Dup : " + Arrays.toString(nums2));
+
+    }
+
+
     public static int removeElement(int[] nums, int val) {
         int count = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -24,23 +39,6 @@ public class RemoveDuplicatesInSortedArray {
         // Truncate the array to remove the last remaining elements
         Arrays.fill(nums, count - 1, nums.length, 0);
         return count;
-    }
-
-    public static void main(String[] args) {
-
-        int[] nums = {-3, -1, 0, 0, 0, 3, 3};
-
-        System.out.println("Result : " + removeElement(nums, 0));
-        System.out.println("After remove Elements : " + Arrays.toString(nums));
-
-        System.out.println("--------------------------------------");
-
-        int[] nums2 = {-3, -1, 0, 0, 0, 3, 3};
-
-        removeDuplicates(nums2);
-        System.out.println("After remove Dup : " + Arrays.toString(nums2));
-
-
     }
 
 }
