@@ -55,6 +55,4 @@ public class SearchRotatedSortedArray {
         System.out.println("Index of " + target4 + " in nums4: " + main.search(nums4, target4)); // Output: 1
     }
 
-
 }
-
