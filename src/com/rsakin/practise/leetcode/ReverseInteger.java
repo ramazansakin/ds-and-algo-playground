@@ -1,6 +1,7 @@
 package com.rsakin.practise.leetcode;
 
 public class ReverseInteger {
+
     public int reverse(int x) {
         long res = 0;
         while (x != 0) {
@@ -13,10 +14,6 @@ public class ReverseInteger {
 
     public static void main(String[] args) {
         ReverseInteger test = new ReverseInteger();
-        test.runTests();
-    }
-
-    public void runTests() {
         // Test cases
         int[] testCases = {123, -123, 120, 0, 1534236469};
 
@@ -25,9 +22,10 @@ public class ReverseInteger {
 
         // Run tests
         for (int i = 0; i < testCases.length; i++) {
-            int result = reverse(testCases[i]);
+            int result = test.reverse(testCases[i]);
             System.out.println("Input: " + testCases[i] + ", Output: " + result + ", Expected: " + expectedResults[i] + ", Result: " + (result == expectedResults[i] ? "Pass" : "Fail"));
         }
+
     }
 
 }
