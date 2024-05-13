@@ -48,8 +48,16 @@ public class SimplifyPath {
 
     public static void main(String[] args) {
 
-        String simplifiedStr = new SimplifyPath().simplifyPath("/../");
-        System.out.println("Simplified String = " + simplifiedStr);
+        String simplifiedStr = new SimplifyPath().simplifyPath("/home//foo/");
+        System.out.println("1 - Path : \"/home//foo/\" -> Simplified String = " + simplifiedStr);
+        System.out.println();
+
+        simplifiedStr = new SimplifyPath().simplifyPath("/../");
+        System.out.println("2 - Path : \"/../\" -> Simplified String = " + simplifiedStr);
+        System.out.println();
+
+        simplifiedStr = new SimplifyPath().simplifyPath("/.../a/../b/c/../d/./");
+        System.out.println("3 - Path : \"/.../a/../b/c/../d/./\" -> Simplified String = " + simplifiedStr);
 
     }
 
