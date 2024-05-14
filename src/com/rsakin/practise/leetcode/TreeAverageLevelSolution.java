@@ -62,6 +62,7 @@ public class TreeAverageLevelSolution {
         root2.right.right = new TreeNode(6);
         List<Double> result2 = main.averageOfLevels(root2);
         System.out.println("Average of levels for Test Case 2: " + result2);
+
     }
 
 }
