@@ -3,7 +3,7 @@ package com.rsakin.practise.playground;
 import java.lang.ref.SoftReference;
 import java.lang.ref.WeakReference;
 
-public class WeakStrongReferences {
+public class WeakVsSoftReferences {
 
     public static void weakReferenceUsage() {
         // Create an object
@@ -12,42 +12,42 @@ public class WeakStrongReferences {
         // Create a weak reference to the object
         WeakReference<String> weakReference = new WeakReference<>(myObject);
 
-        // Dereference the strong reference
+        // Dereference the strong reference to make it eligeable to collect by GC
         myObject = null;
 
         // Access the object through the weak reference
         System.out.println("Object through weak reference: " + weakReference.get());
 
-        // Trigger garbage collection to potentially reclaim the object
+        // Trigger garbage collector to potentially reclaim the object
         System.gc();
 
         // Access the object through the weak reference after garbage collection
         System.out.println("Object through weak reference after GC: " + weakReference.get());
     }
 
-    public static void strongreferenceUsage() {
+    public static void softReferenceUsage() {
         // Create a strong reference to the object
-        String myObject = new String("Hello, strong reference!");
+        String myObject = new String("Hello, soft reference!");
 
         SoftReference<String> softReference = new SoftReference<>(myObject);
         // Dereference the strong reference
         myObject = null;
 
         // Access the object through the strong reference (will still be accessible)
-        System.out.println("Object through strong reference: " + softReference.get());
+        System.out.println("Object through soft reference: " + softReference.get());
 
-        // Trigger garbage collection (may not necessarily collect the object)
+        // Trigger garbage collector to see what ll happen
         System.gc();
 
         // Access the object through the strong reference after garbage collection
-        System.out.println("Object through strong reference after GC: " + softReference.get());
+        System.out.println("Object through soft reference after GC: " + softReference.get());
     }
 
     public static void main(String[] args) {
 
         weakReferenceUsage();
         System.out.println("-------------------------------------------");
-        strongreferenceUsage();
+        softReferenceUsage();
 
     }
 
