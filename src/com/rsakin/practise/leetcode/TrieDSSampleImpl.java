@@ -7,13 +7,13 @@ public class TrieDSSampleImpl {
         boolean isEndOfWord;
 
         public TrieNode() {
-            children = new TrieNode[26]; // Assuming lowercase English letters
+            children = new TrieNode[26]; // Assuming just lowercase english letters
             isEndOfWord = false;
         }
     }
 
     static class Trie {
-        private TrieNode root;
+        private final TrieNode root;
 
         public Trie() {
             root = new TrieNode();
@@ -52,7 +52,7 @@ public class TrieDSSampleImpl {
                 }
                 current = current.children[index];
             }
-            return current != null;
+            return true;
         }
     }
 
@@ -67,6 +67,10 @@ public class TrieDSSampleImpl {
 
         trie.insert("app");
         System.out.println(trie.search("app"));     // return True
+
+        trie.insert("pineapple");
+        System.out.println(trie.startsWith("pineapple"));   // return True
+
     }
 
 }
