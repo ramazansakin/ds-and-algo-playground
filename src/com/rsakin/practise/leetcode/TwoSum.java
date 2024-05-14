@@ -8,12 +8,12 @@ public class TwoSum {
 
     // numbers = [2,7,11,15], target = 9
     // response :  [1,2]
-    // 1.way is the naive solution is brute force approach
-    // we can try all the number couples with 2 for loop
-    // Time: O(n^2) , Space: O(1)
+    // 1.way is the naive solution which is brute force approach
+    // we can try all the number couples within 2 for loops
+    // Then, Time: O(n^2) & Space: O(1)
 
-    // 2.way - better efficient but it contains extra space and this solution for "UNORDERED LIST"
-    // This contains extra space like O(n) also this can be use if given list is un-ordered
+    // 2.way - better efficiency, but it contains extra space and this solution for "UNORDERED LIST"
+    // This contains extra space like O(n) also this can be used if given list is un-ordered
     // But given list is ordered, we can use "Two Pointer Approach" to find the target
     public static int[] twoSum(int[] nums, int target) {
         int[] result = new int[2];
