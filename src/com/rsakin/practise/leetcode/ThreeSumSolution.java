@@ -12,7 +12,7 @@ public class ThreeSumSolution {
     // 2.way - better efficient
     // First, we need to sort the list -> O(n.log(n))
     // Then, we can loop each index and choose 2nd and 3rd index by "Two Pointer" approach (List is SORTED!)
-    // So, it ll be one outher for loop and one inner while loop
+    // So, it ll be one outer for loop and one inner while loop
     // Time: O(n^2) , Space: O(1)
 
 
@@ -20,8 +20,8 @@ public class ThreeSumSolution {
     // No need sorting, just we can use "Map" structure to hold each complements
     // Like, TwoSum problem, we ll also loop for the first variable
     // 2nd and 3rd variables ll be chosen on "Complementary Map"
-    // It provides better efficiency because NO NEED to sort list
-    // Time: O(n^2) , Space: O(n) - Map usage
+    // It provides better efficiency because NO NEED to sort the list
+    // Time: O(n^2) , Space: O(n) - Map usage (2*n)
     public static List<List<Integer>> threeSum(int[] nums) {
         Set<List<Integer>> res = new HashSet<>();
         Arrays.sort(nums);
