@@ -4,9 +4,9 @@ package com.rsakin.practise.leetcode;
 // Row : 3
 
 // Result
-// COD
-// OENAD
-// MDY
+// C   O   D
+// O E N A D
+// M   D   Y
 // Append all together the above 3 strings like : CODOENADMDY
 
 public class ZigZagString {
@@ -26,6 +26,8 @@ public class ZigZagString {
             for (int idx = numRows - 2; idx >= 1 && i < len; --idx) // obliquely up
                 sb[idx].append(c[i++]);
         }
+
+        // Combine all strings
         for (int idx = 1; idx < sb.length; ++idx)
             sb[0].append(sb[idx]);
 
@@ -44,7 +46,7 @@ public class ZigZagString {
         System.out.println("Output: \"" + result1 + "\"");
 
         // Test case 2
-        String s2 = "COMEONDADY";
+        String s2 = "COMEONDADDY";
         int numRows2 = 4;
         String result2 = solution.convert(s2, numRows2);
         System.out.println("\nTest Case 2:");
