@@ -13,7 +13,7 @@ public class ArrayZeroSumSubarray {
     // has a subarray with sero sum
     static Boolean subArrayExists(int arr[]) {
         // Creates an empty hashset hs
-        Set<Integer> hs = new HashSet<Integer>();
+        Set<Integer> hs = new HashSet<>();
 
         // Initialize sum of elements
         int sum = 0;
@@ -44,13 +44,6 @@ public class ArrayZeroSumSubarray {
         int arr[] = {4, 2, -4, 1, -2, 3};
         int arr2[] = {-3, 2, 3, 1, 6};
         int arr3[] = {1, 2, -3, 4, 2};
-
-        List<Integer> numbers = new ArrayList<>();
-        List<Integer> linkedNumbers = new LinkedList<>();
-
-        Map hmap = new HashMap();
-        Map htable = new Hashtable();
-
 
         Point point = subArrayIndexes(arr);
         if (point != null)
@@ -128,6 +121,7 @@ class MaxLenZeroSumSub {
 
         // Function call
         System.out.println("Length of the longest 0 sum subarray is " + maxLengthZeroSumSubarray(arr));
+        System.out.println("----------------");
 
     }
 
