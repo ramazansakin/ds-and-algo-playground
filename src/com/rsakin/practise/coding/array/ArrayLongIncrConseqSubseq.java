@@ -2,13 +2,14 @@ package com.rsakin.practise.coding.array;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class ArrayLongIncrConseqSubseq {
 
     static int LongIncrConseqSubseq(int arr[], int n) {
         // create hashmap to save latest consequent
         // number as "key" and its length as "value"
-        HashMap<Integer, Integer> map = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         // put first element as "key" and its length as "value"
         map.put(arr[0], 1);
@@ -37,7 +38,7 @@ public class ArrayLongIncrConseqSubseq {
     // driver code
     public static void main(String[] args) {
         // Take input from user
-        int[] arr = {3, 10, 3, 11, 4, 5, 7, 7, 8, 12};
+        int[] arr = {2, 10, 11, 4, 5, 7, 7, 8, 12};
         int n = arr.length;
 
         System.out.println("#################");
