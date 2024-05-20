@@ -2,10 +2,10 @@ package com.rsakin.practise.coding.array;
 
 public class MergeSortedArray {
 
-    public static void merge(int[] nums1, int m, int[] nums2, int n) {
+    public static void merge(int[] nums1, int m, int[] nums2) {
         int index1 = m - 1; // Index of last element in nums1
-        int index2 = n - 1; // Index of last element in nums2
-        int mergedIndex = m + n - 1; // Index where the next merged element should be placed
+        int index2 = nums2.length - 1; // Index of last element in nums2
+        int mergedIndex = m + index2; // Index where the next merged element should be placed
 
         // Merge elements from both arrays starting from the end
         while (index1 >= 0 && index2 >= 0) {
@@ -37,7 +37,7 @@ public class MergeSortedArray {
 
         int[] nums2 = {2, 5, 6};
 
-        merge(nums1, 6, nums2, 3);
+        merge(nums1, 6, nums2);
 
     }
 
