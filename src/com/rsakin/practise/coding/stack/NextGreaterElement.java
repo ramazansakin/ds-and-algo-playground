@@ -1,6 +1,6 @@
 package com.rsakin.practise.coding.stack;
 
-import java.util.*;
+import java.util.Stack;
 
 public class NextGreaterElement {
 
