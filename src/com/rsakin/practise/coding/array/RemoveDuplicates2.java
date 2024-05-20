@@ -32,8 +32,39 @@ public class RemoveDuplicates2 {
     }
 
     public static void main(String[] args) {
-        // TODO : Need to add test cases
+        RemoveDuplicates2 solution = new RemoveDuplicates2();
+
+        // Test Case 1: No Duplicates
+        int[] nums1 = {1, 2, 3, 4, 5};
+        int result1 = solution.removeDuplicates(nums1);
+        System.out.println("Test Case 1: " + result1); // Expected: 5
+        System.out.print("Modified Array: ");
+        for (int i = 0; i < result1; i++) {
+            System.out.print(nums1[i] + " ");
+        }
+        System.out.println("------------------");
+
+        // Test Case 2: Some Duplicates Exceeding Twice
+        int[] nums2 = {1, 1, 1, 2, 2, 3, 3, 3, 3, 4};
+        int result2 = solution.removeDuplicates(nums2);
+        System.out.println("Test Case 2: " + result2); // Expected: 7
+        System.out.print("Modified Array: ");
+        for (int i = 0; i < result2; i++) {
+            System.out.print(nums2[i] + " ");
+        }
+        System.out.println("------------------");
+
+        // Test Case 3: All Elements Are the Same
+        int[] nums3 = {2, 2, 2, 2, 2};
+        int result3 = solution.removeDuplicates(nums3);
+        System.out.println("Test Case 3: " + result3); // Expected: 2
+        System.out.print("Modified Array: ");
+        for (int i = 0; i < result3; i++) {
+            System.out.print(nums3[i] + " ");
+        }
+        System.out.println();
 
     }
+
 
 }
