@@ -1,7 +1,7 @@
 package com.rsakin.practise.coding.linkedlist;
 
+// 2 types of sorting you can do here
 public class SortLinkedListSolution {
-
 
     // We can sort the linked-list by merge-sort algorithm
     public ListNode sortList(ListNode head) {
