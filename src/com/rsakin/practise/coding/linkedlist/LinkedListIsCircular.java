@@ -8,8 +8,10 @@ public class LinkedListIsCircular {
         Node next;
     }
 
-    /*This function returns true if given linked
-    list is circular, else false. */
+    /*
+     This function returns true if given linked
+     list is circular, else false.
+    */
     static boolean isCircular(Node head) {
         if (head == null || head.next == null) {
             return false;
@@ -37,8 +39,8 @@ public class LinkedListIsCircular {
         return temp;
     }
 
-    /* Driver code*/
-    public static void main(String args[]) {
+    // Driver code
+    public static void main(String[] args) {
         /* Start with the empty list */
         Node head = newNode(1);
         head.next = newNode(2);
