@@ -3,7 +3,7 @@ package com.rsakin.practise.coding.array;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FindMajorityElement {
+public class MajorityElementSolution {
 
     public int majorityElement(int[] nums) {
         Map<Integer, Integer> countMap = new HashMap<>();
