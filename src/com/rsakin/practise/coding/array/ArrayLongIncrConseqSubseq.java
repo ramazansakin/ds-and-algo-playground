@@ -6,7 +6,7 @@ import java.util.Map;
 
 public class ArrayLongIncrConseqSubseq {
 
-    static int LongIncrConseqSubseq(int arr[], int n) {
+    static int LongIncrConseqSubseq(int[] arr, int n) {
         // create hashmap to save latest consequent
         // number as "key" and its length as "value"
         Map<Integer, Integer> map = new HashMap<>();
@@ -41,9 +41,10 @@ public class ArrayLongIncrConseqSubseq {
         int[] arr = {2, 10, 11, 4, 5, 7, 7, 8, 12};
         int n = arr.length;
 
-        System.out.println("#################");
+        System.out.println("----------------------------");
         System.out.println(LongIncrConseqSubseq(arr, n));
-        System.out.println("#################");
+        System.out.println("----------------------------");
+
     }
 
 }
