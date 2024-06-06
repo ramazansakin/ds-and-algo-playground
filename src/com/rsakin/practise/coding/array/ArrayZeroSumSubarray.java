@@ -3,15 +3,15 @@ package com.rsakin.practise.coding.array;
 // Java program to find
 // if there is a zero sum subarray
 
+
 import java.awt.*;
-import java.util.List;
 import java.util.*;
 
 public class ArrayZeroSumSubarray {
 
     // Returns true if arr[]
-    // has a subarray with sero sum
-    static Boolean subArrayExists(int arr[]) {
+    // has a subarray with zero-sum
+    static Boolean subArrayExists(int[] arr) {
         // Creates an empty hashset hs
         Set<Integer> hs = new HashSet<>();
 
@@ -34,16 +34,15 @@ public class ArrayZeroSumSubarray {
             hs.add(sum);
         }
 
-        // We reach here only when there is
-        // no subarray with 0 sum
+        // We reach here only when there is no subarray with 0 sum
         return false;
     }
 
     // Driver's code
-    public static void main(String arg[]) {
-        int arr[] = {4, 2, -4, 1, -2, 3};
-        int arr2[] = {-3, 2, 3, 1, 6};
-        int arr3[] = {1, 2, -3, 4, 2};
+    public static void main(String[] args) {
+        int[] arr = {4, 2, -4, 1, -2, 3};
+        int[] arr2 = {-3, 2, 3, 1, 6};
+        int[] arr3 = {1, 2, -3, 4, 2};
 
         Point point = subArrayIndexes(arr);
         if (point != null)
@@ -66,7 +65,7 @@ public class ArrayZeroSumSubarray {
 
     }
 
-    static Point subArrayIndexes(int arr[]) {
+    static Point subArrayIndexes(int[] arr) {
         Map<Integer, Integer> hs = new HashMap<>();
         int sum = 0;
 
@@ -116,8 +115,8 @@ class MaxLenZeroSumSub {
     }
 
     // Drive's code
-    public static void main(String arg[]) {
-        int arr[] = {15, -2, 2, -8, 1, 7, 10, 23};
+    public static void main(String[] arg) {
+        int[] arr = {15, -2, 2, -8, 1, 7, 10, 23};
 
         // Function call
         System.out.println("Length of the longest 0 sum subarray is " + maxLengthZeroSumSubarray(arr));
