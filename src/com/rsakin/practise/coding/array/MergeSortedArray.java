@@ -22,9 +22,9 @@ public class MergeSortedArray {
             nums1[mergedIndex--] = nums2[index2--];
         }
 
-        for (int i = 0; i < nums1.length; i++) {
-            System.out.print(nums1[i] + " ");
-        }
+        // print the result
+        for (int j : nums1)
+            System.out.print(j + " ");
 
     }
 
