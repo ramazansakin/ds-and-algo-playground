@@ -32,7 +32,7 @@ public class NextGreaterElement {
     public static void main(String[] args) {
 
         NextGreaterElement solution = new NextGreaterElement();
-        int[] nums = {4, 5, 2, 25};
+        int[] nums = {4, 5, 2, 25, 12, 17, 3, 54, 3};
         int[] result = solution.nextGreaterElement(nums);
 
         System.out.println("Next Greater Element:");
