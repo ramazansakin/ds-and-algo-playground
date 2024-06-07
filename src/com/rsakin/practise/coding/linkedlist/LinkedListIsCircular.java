@@ -41,7 +41,7 @@ public class LinkedListIsCircular {
 
     // Driver code
     public static void main(String[] args) {
-        /* Start with the empty list */
+        // Case-1 : Start with the empty list
         Node head = newNode(1);
         head.next = newNode(2);
         head.next.next = newNode(3);
@@ -49,7 +49,7 @@ public class LinkedListIsCircular {
 
         System.out.print(isCircular(head) ? "Yes\n" : "No\n");
 
-        // Making linked list circular
+        // Case-2 : Making linked list circular
         head.next.next.next.next = head;
 
         System.out.print(isCircular(head) ? "Yes\n" : "No\n");
