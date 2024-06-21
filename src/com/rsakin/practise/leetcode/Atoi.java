@@ -3,8 +3,9 @@ package com.rsakin.practise.leetcode;
 public class Atoi {
 
     public int myAtoi(String s) {
-        // base case
-        if (s == null) return 0;
+        // base case: null or empty string
+        if (s == null || s.isEmpty()) return 0;
+
         // remove leading and trailing whitespace characters
         s = s.trim();
         if (s.isEmpty()) return 0;
@@ -13,11 +14,13 @@ public class Atoi {
         // use long to prevent int overflow+/underflow-
         long sum = 0;
 
-        if (s.charAt(0) == '-') {
+        // determine the sign
+        char firstChar = s.charAt(0);
+        if (firstChar == '-') {
             sign = -1;
-            ++start;
-        } else if (s.charAt(0) == '+') {
-            ++start;
+            start++;
+        } else if (firstChar == '+') {
+            start++;
         }
 
         for (int i = start; i < len; i++) {
