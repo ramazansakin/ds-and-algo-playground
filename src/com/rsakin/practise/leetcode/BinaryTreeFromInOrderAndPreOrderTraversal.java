@@ -3,7 +3,7 @@ package com.rsakin.practise.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BinaryTreeFromInOrderAndPreORderTraversal {
+public class BinaryTreeFromInOrderAndPreOrderTraversal {
 
     int preorderIndex;
     Map<Integer, Integer> inorderIndexMap;
@@ -11,14 +11,14 @@ public class BinaryTreeFromInOrderAndPreORderTraversal {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         preorderIndex = 0;
         inorderIndexMap = new HashMap<>();
-        for (int i = 0; i < inorder.length; i++){
+        for (int i = 0; i < inorder.length; i++) {
             inorderIndexMap.put(inorder[i], i);
         }
         return arrayToTree(preorder, 0, preorder.length - 1);
     }
 
-    public TreeNode arrayToTree(int[] preorder, int left, int right){
-        if(left > right) return null;
+    private TreeNode arrayToTree(int[] preorder, int left, int right) {
+        if (left > right) return null;
         int rootValue = preorder[preorderIndex++];
         TreeNode root = new TreeNode(rootValue);
 
@@ -38,7 +38,7 @@ public class BinaryTreeFromInOrderAndPreORderTraversal {
     }
 
     public static void main(String[] args) {
-        BinaryTreeFromInOrderAndPreORderTraversal solution = new BinaryTreeFromInOrderAndPreORderTraversal();
+        BinaryTreeFromInOrderAndPreOrderTraversal solution = new BinaryTreeFromInOrderAndPreOrderTraversal();
 
         // Example 1
         int[] preorder1 = {3, 9, 20, 15, 7};
