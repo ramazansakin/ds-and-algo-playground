@@ -47,31 +47,6 @@ public class CombinationSum {
 
     }
 
-    public static void find(int id, int can[], int target, List<Integer> ds, List<List<Integer>> ans) {
-        //   base case
-        if (id == can.length) {
-            if (target == 0) {
-                ans.add(new ArrayList<>(ds));
-            }
-            return;
-        }
-
-        // include
-        if (target >= can[id]) {
-            ds.add(can[id]);
-            find(id, can, target - can[id], ds, ans);
-            ds.remove(ds.size() - 1);
-        }
-        find(id + 1, can, target, ds, ans);
-
-    }
-
-    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> ans = new ArrayList<>();
-        find(0, candidates, target, new ArrayList<>(), ans);
-        return ans;
-    }
-
 
     // ################
     // If the question ll be like, not using the same number again
