@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class FindFirstAndLastPositionElemSortedArray {
 
     // Binary Search approach to find first and latest number on a sorted array
-    // Normal sorted version of the question solution takes just 2 * O(logn) even logn + log(n/2) :)
+    // Normal sorted version of the question solution takes just 2 * O(logn)
     // if the array is not sorted we could sort the array first but it ll be not feasible because it ll take O(n.logn) to sort
     // So if the array is not sorted we could try to use map to keep number and indexes and just moving forward on the list until the end,
     // we could find the first and last occurrence of the requested number
@@ -13,6 +13,20 @@ public class FindFirstAndLastPositionElemSortedArray {
         int[] result = {-1, -1};
 
         // Find the starting position
+        result[0] = findStartingPosition(nums, target);
+
+        // If the starting position is -1, the target is not present
+        if (result[0] == -1) {
+            return result;
+        }
+
+        // Find the ending position
+        result[1] = findEndingPosition(nums, target);
+
+        return result;
+    }
+
+    private int findStartingPosition(int[] nums, int target) {
         int left = 0, right = nums.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
@@ -23,13 +37,13 @@ public class FindFirstAndLastPositionElemSortedArray {
             }
         }
         if (left < nums.length && nums[left] == target) {
-            result[0] = left;
-        } else {
-            return result; // Target not found
+            return left;
         }
+        return -1;
+    }
 
-        // Find the ending position
-        right = nums.length - 1;
+    private int findEndingPosition(int[] nums, int target) {
+        int left = 0, right = nums.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;
             if (nums[mid] <= target) {
@@ -38,9 +52,7 @@ public class FindFirstAndLastPositionElemSortedArray {
                 right = mid - 1;
             }
         }
-        result[1] = right;
-
-        return result;
+        return right;
     }
 
     public static void main(String[] args) {
